@@ -1,0 +1,116 @@
+rust/crates/ccusage-config/src/config.rs
+  s_77d8f8fad68abc::t_a44fa76dc46988 1022-1041
+nix/cargo-artifacts.nix
+  s_77d8f8fad68abc::t_6368caa29cdf2f 42
+rust/crates/ccusage-adapter-all/src/loader.rs
+  s_77d8f8fad68abc::t_3001ac904b2765 361
+  s_77d8f8fad68abc::t_b7ff99f56a7d03 14-15,346-347,349-353,357-360
+  s_77d8f8fad68abc::t_c5d1b9474fcf48 348,354-356
+rust/crates/ccusage-cli-parser/src/cli-commands.json
+  s_77d8f8fad68abc::t_0816bdd0f24a6c 113-115,828-846,866-882
+rust/adapters/dsh/src/lib.rs
+  s_77d8f8fad68abc::t_2f64167c8bd8c3 1-92
+rust/adapters/dsh/src/paths.rs
+  s_77d8f8fad68abc::t_4659cd55222feb 1-87,94-161,182-183
+  s_77d8f8fad68abc::t_ec5ce987c96f38 88-93,162-181
+rust/crates/ccusage/src/main.rs
+  s_77d8f8fad68abc::t_f30650ae6863f4 40,92,99,113
+docs/guide/index.md
+  s_77d8f8fad68abc::t_a9b92f1c15f2e0 75-95
+  s_77d8f8fad68abc::t_8684840a34a426 5,7,22,135
+rust/crates/ccusage/README.md
+  s_77d8f8fad68abc::t_6368caa29cdf2f 29
+docs/guide/getting-started.md
+  s_77d8f8fad68abc::t_6235b0b8cebbfa 182,207
+rust/crates/ccusage/Cargo.toml
+  s_77d8f8fad68abc::t_f30650ae6863f4 27
+rust/crates/ccusage-core/src/lib.rs
+  s_77d8f8fad68abc::t_b7ff99f56a7d03 76
+docs/guide/claude/index.md
+  s_77d8f8fad68abc::t_6368caa29cdf2f 3,78
+rust/crates/ccusage-cli/src/types.rs
+  s_77d8f8fad68abc::t_f30650ae6863f4 18
+docs/guide/dsh/index.md
+  s_77d8f8fad68abc::t_27a5a9ef3544dd 1-41,46,48-82
+  s_77d8f8fad68abc::t_a9b92f1c15f2e0 42-45,47
+rust/adapters/dsh/src/report.rs
+  s_77d8f8fad68abc::t_3d5740ec97f97f 1-68
+rust/crates/ccusage-adapter-all/src/tests.rs
+  s_77d8f8fad68abc::t_e3aaae4b0ef7e6 812
+  s_77d8f8fad68abc::t_8564d43e356c63 870-903
+rust/adapters/dsh/src/loader.rs
+  s_77d8f8fad68abc::t_3d5740ec97f97f 1-46
+  s_77d8f8fad68abc::t_ec5ce987c96f38 47-75,78-89
+  s_77d8f8fad68abc::t_4075cb7147b8df 76-77
+rust/adapters/dsh/Cargo.toml
+  s_77d8f8fad68abc::t_802124752ce275 1-15
+rust/adapters/dsh/README.md
+  s_77d8f8fad68abc::t_2f64167c8bd8c3 1-26
+rust/crates/ccusage/tests/dsh_cli.rs
+  s_77d8f8fad68abc::t_191422597212c0 1-2,5-8,14,16-52,91-92
+  s_77d8f8fad68abc::t_ec5ce987c96f38 3-4,9-13,15,53-90
+docs/guide/all-reports.md
+  s_77d8f8fad68abc::t_a9b92f1c15f2e0 49-69
+  s_77d8f8fad68abc::t_081baa1d777276 89
+rust/Cargo.toml
+  s_77d8f8fad68abc::t_802124752ce275 28,70
+docs/guide/configuration.md
+  s_77d8f8fad68abc::t_6235b0b8cebbfa 114
+rust/crates/ccusage-cli-parser/src/tests.rs
+  s_77d8f8fad68abc::t_0816bdd0f24a6c 1278-1286
+  s_77d8f8fad68abc::t_03f9c5d6caf31e 209,653
+docs/.vitepress/config.ts
+  s_77d8f8fad68abc::t_081baa1d777276 88
+docs/index.md
+  s_77d8f8fad68abc::t_6235b0b8cebbfa 7,30
+rust/crates/ccusage/src/adapter/mod.rs
+  s_77d8f8fad68abc::t_f30650ae6863f4 9
+rust/crates/ccusage-config/src/config_schema.rs
+  s_77d8f8fad68abc::t_a44fa76dc46988 33-34,153-167,1217
+  s_77d8f8fad68abc::t_c5d1b9474fcf48 1151
+rust/crates/ccusage-adapter-all/src/lib.rs
+  s_77d8f8fad68abc::t_b7ff99f56a7d03 19
+apps/ccusage/config-schema.json
+  s_77d8f8fad68abc::t_4075cb7147b8df 6456-6459
+  s_77d8f8fad68abc::t_0e919fe0e0e5e6 5841-6373
+docs/guide/environment-variables.md
+  s_77d8f8fad68abc::t_a9b92f1c15f2e0 9-30
+  s_77d8f8fad68abc::t_8684840a34a426 52,223
+docs/guide/config-files.md
+  s_77d8f8fad68abc::t_8684840a34a426 183
+rust/crates/ccusage-adapter-all/README.md
+  s_77d8f8fad68abc::t_6368caa29cdf2f 29
+rust/crates/ccusage-adapter-all/src/report.rs
+  s_77d8f8fad68abc::t_a3b27147a2d599 615
+rust/adapters/dsh/src/parser.rs
+  s_77d8f8fad68abc::t_ac0436cdba531c 38,48,50-55,91-93,204,223,261-262,289,297,317-330,385,389,406,421,475-478
+  s_77d8f8fad68abc::t_4075cb7147b8df 171-172
+  s_77d8f8fad68abc::t_d8d0d567322377 588-601,630-632
+  s_77d8f8fad68abc::t_4cd597218fc5b5 256-257,344-345
+  s_77d8f8fad68abc::t_09efd36b99aebe 1-37,39-47,49,56-90,94-161,177-203,205-222,224-255,258-260,263-288,290-296,298-300,304-310,312-316,331,339-343,346-384,386-388,390-393,396-405,407-420,422-474,479-587,633-648
+  s_77d8f8fad68abc::t_ec5ce987c96f38 162-170,173-176,301-303,311,332-338,602-629
+docs/guide/codex/index.md
+  s_77d8f8fad68abc::t_6368caa29cdf2f 7
+rust/crates/ccusage/src/cli/last_window.rs
+  s_77d8f8fad68abc::t_f30650ae6863f4 42
+rust/crates/ccusage-adapter-all/Cargo.toml
+  s_77d8f8fad68abc::t_b7ff99f56a7d03 16
+rust/crates/ccusage-cli-parser/src/parser.rs
+  s_77d8f8fad68abc::t_f30650ae6863f4 350-352,792,955,969,995,1079
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.44-trip",
+  "base_commit_sha": "9f2becf4ac414eb54665e81d0638950fc712e9a3",
+  "prompts": {},
+  "sessions": {
+    "s_77d8f8fad68abc": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a0a4cc-0232-7bb2-905c-7aab5db00413",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "junpengke <kejp@trip.com>"
+    }
+  }
+}
