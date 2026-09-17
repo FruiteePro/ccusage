@@ -283,6 +283,30 @@ mod tests {
     }
 
     #[test]
+    fn prices_gpt_reserve_as_gpt_5_6_luna() {
+        let pricing = PricingMap::load_embedded();
+        let usage = CodexModelUsage {
+            input_tokens: 1_000,
+            output_tokens: 100,
+            total_tokens: 1_100,
+            ..CodexModelUsage::default()
+        };
+
+        let reserve_cost =
+            calculate_codex_model_cost("gpt-reserve", &usage, &pricing, CodexSpeed::Standard);
+        let luna_cost =
+            calculate_codex_model_cost("gpt-5.6-luna", &usage, &pricing, CodexSpeed::Standard);
+
+        assert!(reserve_cost > 0.0);
+        assert_eq!(reserve_cost, luna_cost);
+        assert!(!codex_model_missing_pricing(
+            "gpt-reserve",
+            &usage,
+            &pricing
+        ));
+    }
+
+    #[test]
     fn reports_codex_model_aliases_without_raw_model_names() {
         let _aliases = crate::model_aliases::set_model_aliases_for_tests([
             ("private-codex-alpha", "gpt-5.5"),
@@ -507,6 +531,26 @@ mod tests {
         let fast = calculate_codex_model_cost("gpt-5.3-codex", &usage, &pricing, CodexSpeed::Fast);
 
         assert!((fast - (standard * 2.0)).abs() < f64::EPSILON);
+    }
+
+    #[test]
+    fn applies_gpt_6_astra_fast_multiplier_without_changing_standard_cost() {
+        let pricing = PricingMap::load_embedded();
+        let usage = CodexModelUsage {
+            input_tokens: 1_000_000,
+            cached_input_tokens: 1_000_000,
+            total_tokens: 1_000_000,
+            long_context_input_tokens: 1_000_000,
+            long_context_cached_input_tokens: 1_000_000,
+            ..CodexModelUsage::default()
+        };
+
+        let standard =
+            calculate_codex_model_cost("gpt-6-astra", &usage, &pricing, CodexSpeed::Standard);
+        let fast = calculate_codex_model_cost("gpt-6-astra", &usage, &pricing, CodexSpeed::Fast);
+
+        assert!((standard - 2.0).abs() < f64::EPSILON);
+        assert!((fast - 4.0).abs() < f64::EPSILON);
     }
 
     #[test]
