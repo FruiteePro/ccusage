@@ -37,6 +37,7 @@ fn main() -> Result<()> {
         Some(Command::OpenCode(args)) => adapter::opencode::run(args),
         Some(Command::Amp(args)) => adapter::amp::run(args),
         Some(Command::Droid(args)) => adapter::droid::run(args),
+        Some(Command::Dsh(args)) => adapter::dsh::run(args),
         Some(Command::Codebuff(args)) => adapter::codebuff::run(args),
         Some(Command::Hermes(args)) => adapter::hermes::run(args),
         Some(Command::Pi(args)) => adapter::pi::run(args),
@@ -88,13 +89,14 @@ mod tests {
 
     #[test]
     fn agent_commands_are_exposed_by_independent_crates() {
-        let runs: [fn(AgentCommandArgs) -> Result<()>; 17] = [
+        let runs: [fn(AgentCommandArgs) -> Result<()>; 18] = [
             ccusage_adapter_amp::run,
             ccusage_adapter_antigravity::run,
             ccusage_adapter_codebuff::run,
             ccusage_adapter_codex::run,
             ccusage_adapter_copilot::run,
             ccusage_adapter_droid::run,
+            ccusage_adapter_dsh::run,
             ccusage_adapter_gemini::run,
             ccusage_adapter_goose::run,
             ccusage_adapter_grok::run,
@@ -108,7 +110,7 @@ mod tests {
             ccusage_adapter_zcode::run,
         ];
 
-        assert_eq!(runs.len(), 17);
+        assert_eq!(runs.len(), 18);
     }
 
     #[test]

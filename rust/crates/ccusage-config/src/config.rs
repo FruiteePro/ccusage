@@ -1019,6 +1019,27 @@ mod tests {
     }
 
     #[test]
+    fn dsh_namespace_keeps_shared_report_options() {
+        let config = context(
+            json!({
+                "dsh": {
+                    "defaults": { "offline": true },
+                    "commands": { "session": { "json": true } }
+                }
+            }),
+            "dsh session",
+            Some("dsh"),
+            "session",
+        );
+        let mut shared = SharedArgs::default();
+
+        apply_config_to_shared(&mut shared, &config);
+
+        assert!(shared.offline);
+        assert!(shared.json);
+    }
+
+    #[test]
     fn zcode_namespace_keeps_shared_report_options() {
         let config = context(
             json!({

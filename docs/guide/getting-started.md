@@ -179,6 +179,7 @@ If ccusage shows no data, check:
    - GitHub Copilot CLI: `${COPILOT_HOME:-~/.copilot}/session-state/*/events.jsonl`, `${COPILOT_HOME:-~/.copilot}/otel/**/*.jsonl`, or the single file specified by `COPILOT_OTEL_FILE_EXPORTER_PATH`
    - Antigravity: `${ANTIGRAVITY_DATA_DIR:-~/.gemini/antigravity*}` or `~/.config/antigravity`
    - Grok Build CLI: `${GROK_HOME:-~/.grok}`
+   - DeepSeek Harness: `${DSH_HOME:-~/.dsh}/sessions/`
    - ZCode: `${ZCODE_HOME:-~/.zcode}/cli/db/db.sqlite`
 
 ### Custom Data Directory
@@ -203,6 +204,7 @@ export COPILOT_HOME="/path/to/copilot"
 export ANTIGRAVITY_DATA_DIR="/path/to/antigravity"
 export COPILOT_OTEL_FILE_EXPORTER_PATH="/path/to/copilot-otel.jsonl"
 export GROK_HOME="/path/to/grok-home"
+export DSH_HOME="/path/to/dsh-home"
 export ZCODE_HOME="/path/to/zcode-home"
 ```
 

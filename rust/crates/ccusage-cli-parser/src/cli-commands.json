@@ -110,6 +110,10 @@
 				"description": "Show Grok Build CLI usage commands"
 			},
 			{
+				"name": "dsh",
+				"description": "Show DeepSeek Harness usage commands"
+			},
+			{
 				"name": "zcode",
 				"description": "Show ZCode usage commands"
 			}
@@ -822,6 +826,25 @@
 			"options": "agent_options"
 		},
 		{
+			"path": ["dsh"],
+			"description": "Usage reports for DeepSeek Harness.",
+			"usage": "ccusage dsh <COMMANDS>",
+			"commands": [
+				{
+					"name": "daily",
+					"description": "Show DeepSeek Harness usage grouped by date"
+				},
+				{
+					"name": "monthly",
+					"description": "Show DeepSeek Harness usage grouped by month"
+				},
+				{
+					"name": "session",
+					"description": "Show DeepSeek Harness usage grouped by session"
+				}
+			]
+		},
+		{
 			"path": ["zcode"],
 			"description": "Usage reports for ZCode.",
 			"usage": "ccusage zcode <COMMANDS>",
@@ -839,6 +862,24 @@
 					"description": "Show ZCode usage grouped by session"
 				}
 			]
+		},
+		{
+			"path": ["dsh", "daily"],
+			"description": "Show DeepSeek Harness usage grouped by date",
+			"usage": "ccusage dsh daily <OPTIONS>",
+			"options": "agent_period_options"
+		},
+		{
+			"path": ["dsh", "monthly"],
+			"description": "Show DeepSeek Harness usage grouped by month",
+			"usage": "ccusage dsh monthly <OPTIONS>",
+			"options": "agent_period_options"
+		},
+		{
+			"path": ["dsh", "session"],
+			"description": "Show DeepSeek Harness usage grouped by session",
+			"usage": "ccusage dsh session <OPTIONS>",
+			"options": "agent_options"
 		},
 		{
 			"path": ["zcode", "daily"],

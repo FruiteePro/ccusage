@@ -15,6 +15,7 @@ pub enum Command {
     OpenCode(AgentCommandArgs),
     Amp(AgentCommandArgs),
     Droid(AgentCommandArgs),
+    Dsh(AgentCommandArgs),
     Codebuff(AgentCommandArgs),
     Hermes(AgentCommandArgs),
     Pi(AgentCommandArgs),

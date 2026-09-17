@@ -30,6 +30,8 @@ pub struct CcusageConfig {
     pub amp: Option<AmpConfig>,
     /// Droid configuration.
     pub droid: Option<DroidConfig>,
+    /// DeepSeek Harness configuration.
+    pub dsh: Option<DshConfig>,
     /// Codebuff configuration.
     pub codebuff: Option<CodebuffConfig>,
     /// Hermes Agent configuration.
@@ -143,6 +145,21 @@ pub struct DroidConfig {
 #[derive(Debug, Default, Deserialize, JsonSchema)]
 #[serde(rename_all = "camelCase")]
 pub struct DroidCommandsConfig {
+    pub daily: Option<SharedOptions>,
+    pub monthly: Option<SharedOptions>,
+    pub session: Option<SharedOptions>,
+}
+
+#[derive(Debug, Default, Deserialize, JsonSchema)]
+#[serde(rename_all = "camelCase")]
+pub struct DshConfig {
+    pub defaults: Option<SharedOptions>,
+    pub commands: Option<DshCommandsConfig>,
+}
+
+#[derive(Debug, Default, Deserialize, JsonSchema)]
+#[serde(rename_all = "camelCase")]
+pub struct DshCommandsConfig {
     pub daily: Option<SharedOptions>,
     pub monthly: Option<SharedOptions>,
     pub session: Option<SharedOptions>,
@@ -1131,6 +1148,7 @@ mod tests {
             &with_keys(&shared, &["openClawPath"]),
         );
         assert_schema_properties(&schema, &["grok", "defaults"], &shared);
+        assert_schema_properties(&schema, &["dsh", "defaults"], &shared);
         assert_schema_properties(&schema, &["antigravity", "defaults"], &shared);
         assert_schema_properties(&schema, &["zcode", "defaults"], &shared);
     }
@@ -1196,6 +1214,7 @@ mod tests {
                 "copilot",
                 "defaults",
                 "droid",
+                "dsh",
                 "gemini",
                 "antigravity",
                 "goose",

@@ -809,6 +809,7 @@ fn isolated_agent_env(
         "OPENCODE_DATA_DIR",
         "AMP_DATA_DIR",
         "DROID_SESSIONS_DIR",
+        "DSH_HOME",
         "CODEBUFF_DATA_DIR",
         "HERMES_HOME",
         "PI_AGENT_DIR",
@@ -864,6 +865,40 @@ fn unified_daily_rows_use_grok_home() {
 #[test]
 fn unified_session_rows_use_grok_home() {
     assert_unified_rows_use_grok_home(AgentReportKind::Session);
+}
+
+fn assert_unified_rows_use_dsh_home(kind: AgentReportKind) {
+    let session = [
+        r#"{"type":"session","version":3,"id":"sess-dsh","createdAt":1780000000000,"cwd":"/work"}"#,
+        r#"{"type":"request/context","time":1780000000001,"data":{"provider":"deepseek","model":"deepseek-v4-pro"}}"#,
+        r#"{"type":"step/start","time":1780000000002,"data":{"turn":1,"step":1}}"#,
+        r#"{"type":"assistant/message","time":1780000000003,"data":{"turn":1,"step":1,"usage":{"inputTokens":100,"outputTokens":20,"cacheReadTokens":40,"cacheWriteTokens":5},"message":{"source":{"provider":"deepseek","model":"deepseek-v4-pro"}}}}"#,
+    ]
+    .join("\n");
+    let fixture = fs_fixture!({
+        "dsh/sessions/project/sess-dsh/session.v3.jsonl": session,
+    });
+    let _env = isolated_agent_env(&fixture, "DSH_HOME", fixture.path("dsh").into_os_string());
+    let shared = fixture_shared("20260528", "20260528");
+
+    let result = loader::load_rows(kind, &shared).unwrap();
+
+    assert_eq!(result.rows.len(), 1);
+    assert_eq!(result.detected_agents, vec!["dsh"]);
+    assert_eq!(result.rows[0].input_tokens, 100);
+    assert_eq!(result.rows[0].cache_creation_tokens, 5);
+    assert_eq!(result.rows[0].cache_read_tokens, 40);
+    assert_eq!(result.rows[0].output_tokens, 20);
+}
+
+#[test]
+fn unified_daily_rows_use_dsh_home() {
+    assert_unified_rows_use_dsh_home(AgentReportKind::Daily);
+}
+
+#[test]
+fn unified_session_rows_use_dsh_home() {
+    assert_unified_rows_use_dsh_home(AgentReportKind::Session);
 }
 
 fn assert_daily_family_and_session_sections_match_standalone(shared: &SharedArgs) {
