@@ -1,0 +1,29 @@
+name: Sync upstream
+
+on:
+  schedule:
+    # 10:17 Asia/Shanghai. Avoid the busy top-of-hour window.
+    - cron: '17 2 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: sync-upstream-main
+  cancel-in-progress: false
+
+jobs:
+  sync-upstream:
+    if: github.repository == 'FruiteePro/ccusage'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Merge upstream main into fork main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: >-
+          gh api --method POST "repos/${GH_REPO}/merge-upstream"
+          --field branch=main
