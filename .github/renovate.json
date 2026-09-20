@@ -28,13 +28,6 @@
 			"enabled": false
 		}
 	],
-	"postUpgradeTasks": {
-		"commands": ["nix run .#generate-bun-nix"],
-		"executionMode": "branch",
-		"installTools": {
-			"nix": {}
-		}
-	},
 	"postUpdateOptions": ["pnpmDedupe"],
 	"rangeStrategy": "bump",
 	"vulnerabilityAlerts": {
