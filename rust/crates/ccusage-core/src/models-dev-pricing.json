@@ -26946,6 +26946,16 @@
 			"context": 262144
 		}
 	},
+	"stepfun/step-5-preview": {
+		"cost": {
+			"cache_read": 0.05,
+			"input": 1,
+			"output": 2.7
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"subconscious/glm-5.2": {
 		"cost": {
 			"cache_read": 0.26,
@@ -30985,13 +30995,13 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.018396,
-			"input": 0.57816,
-			"output": 1.73448
+			"cache_read": 0.01914,
+			"input": 0.5742,
+			"output": 1.7226
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 1048576
+			"context": 1024000
 		}
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
