@@ -16,24 +16,30 @@ use crate::{
     cli::{CostMode, SharedArgs},
     fast::{FxHashMap, byte_lines, suffix_string},
     format_date_tz, log_level, missing_pricing_model_for_usage, parse_ts_timestamp, parse_tz,
+    utc_now,
 };
 
 use super::{
-    DedupeIndexVec, advisor_usages_from_line, chunk_file_indexes_by_size, daily_usage_dedupe_hash,
+    DailySummaries, DedupeIndexVec, advisor_usages_from_line, chunk_file_indexes_by_size,
     deserialize_usage_line, is_semver_prefix,
-    paths::{claude_paths, extract_project, usage_files},
-    push_deduped_index, push_deduped_session_alias, sidechain_replay_dedupe_hash,
+    paths::{SinceFiles, claude_paths, extract_project, split_files_before_since, usage_files},
+    push_deduped_index, push_deduped_session_alias, push_new_deduped_index,
+    sidechain_entry_replay_dedupe_hash, sidechain_replay_dedupe_hash, usage_dedupe_hash,
 };
 
 pub(super) fn load_daily_summaries_inner(
     shared: &SharedArgs,
     project_filter: Option<&str>,
     group_by_project: bool,
-) -> Result<Vec<UsageSummary>> {
+) -> Result<DailySummaries> {
     let paths = claude_paths()?;
-    let files = usage_files(&paths, project_filter);
-    if files.is_empty() {
-        return Ok(Vec::new());
+    let SinceFiles { kept, pruned } =
+        split_files_before_since(usage_files(&paths, project_filter), shared, utc_now());
+    if kept.is_empty() && pruned.is_empty() {
+        return Ok(DailySummaries {
+            summaries: Vec::new(),
+            detected: false,
+        });
     }
 
     let pricing = if shared.mode == CostMode::Display {
@@ -46,14 +52,48 @@ pub(super) fn load_daily_summaries_inner(
         ))
     };
     let tz = parse_tz(shared.timezone.as_deref());
+    let summaries = summarize_daily_files(
+        &kept,
+        shared,
+        project_filter,
+        group_by_project,
+        tz.as_ref(),
+        pricing.as_ref(),
+    );
+    // Skipped sessions still hold Claude usage, so they keep Claude detected
+    // exactly as an unbounded load would. The first file with an entry settles it.
+    let detected = !summaries.is_empty()
+        || pruned.iter().any(|file| {
+            read_daily_usage_file(file, tz.as_ref(), shared.mode, pricing.as_ref())
+                .entries
+                .iter()
+                .any(|entry| project_filter.is_none_or(|filter| entry.project.as_ref() == filter))
+        });
+    Ok(DailySummaries {
+        summaries,
+        detected,
+    })
+}
+
+fn summarize_daily_files(
+    files: &[PathBuf],
+    shared: &SharedArgs,
+    project_filter: Option<&str>,
+    group_by_project: bool,
+    tz: Option<&JiffTimeZone>,
+    pricing: Option<&PricingMap>,
+) -> Vec<UsageSummary> {
+    if files.is_empty() {
+        return Vec::new();
+    }
     let mode = shared.mode;
     let loaded_files = if shared.single_thread {
         files
             .iter()
-            .map(|file| read_daily_usage_file(file, tz.as_ref(), mode, pricing.as_ref()))
+            .map(|file| read_daily_usage_file(file, tz, mode, pricing))
             .collect::<Vec<_>>()
     } else {
-        read_daily_usage_files_parallel(&files, tz.as_ref(), mode, pricing.as_ref())
+        read_daily_usage_files_parallel(files, tz, mode, pricing)
     };
 
     let mut deduped_indexes: FxHashMap<u64, DedupeIndexVec> = FxHashMap::default();
@@ -77,7 +117,7 @@ pub(super) fn load_daily_summaries_inner(
                 .or_default()
                 .add_entry(entry);
         }
-        return Ok(groups
+        return groups
             .into_iter()
             .map(|((date, project), group)| {
                 let mut summary = group.into_summary();
@@ -85,7 +125,7 @@ pub(super) fn load_daily_summaries_inner(
                 summary.project = Some(project.to_string());
                 summary
             })
-            .collect());
+            .collect();
     }
 
     let mut groups = BTreeMap::<String, DailyAccumulator>::new();
@@ -95,14 +135,14 @@ pub(super) fn load_daily_summaries_inner(
             .or_default()
             .add_entry(entry);
     }
-    Ok(groups
+    groups
         .into_iter()
         .map(|(key, group)| {
             let mut summary = group.into_summary();
             summary.date = Some(key);
             summary
         })
-        .collect())
+        .collect()
 }
 
 #[derive(Debug)]
@@ -414,7 +454,7 @@ fn push_deduped_daily_entry(
 ) {
     let dedupe_lookup = entry.message_id.as_deref().map(|message_id| {
         let request_id = entry.request_id.as_deref();
-        let exact_hash = daily_usage_dedupe_hash(
+        let exact_hash = usage_dedupe_hash(
             message_id,
             request_id,
             entry.session_id.as_ref(),
@@ -434,11 +474,15 @@ fn push_deduped_daily_entry(
                 })
             })
             .or_else(|| {
-                // /btw sidechain logs can replay parent messages with new request IDs.
-                let message_hash =
-                    sidechain_replay_dedupe_hash(message_id, entry.session_id.as_ref());
+                // /btw sidechain logs can replay parent messages with new request IDs. A parent
+                // candidate only has to look through sidechain entries.
                 let candidate_is_sidechain = is_sidechain_daily_entry(&entry);
-                deduped_indexes.get(&message_hash).and_then(|indexes| {
+                let route_hash = if candidate_is_sidechain {
+                    sidechain_replay_dedupe_hash(message_id, entry.session_id.as_ref())
+                } else {
+                    sidechain_entry_replay_dedupe_hash(message_id, entry.session_id.as_ref())
+                };
+                deduped_indexes.get(&route_hash).and_then(|indexes| {
                     indexes.iter().find_map(|dedupe_index| {
                         let existing = &deduped[dedupe_index.index];
                         let indexed_session_id = dedupe_index
@@ -461,28 +505,40 @@ fn push_deduped_daily_entry(
         {
             // Cross-session copies can become the survivor, so keep every session route used by
             // later sidechain replays.
-            push_deduped_session_alias(
-                deduped_indexes,
-                sidechain_replay_dedupe_hash(message_id, entry.session_id.as_ref()),
-                index,
-                entry.session_id.as_ref(),
-            );
-            push_deduped_session_alias(
-                deduped_indexes,
-                sidechain_replay_dedupe_hash(message_id, deduped[index].session_id.as_ref()),
-                index,
-                deduped[index].session_id.as_ref(),
-            );
+            let existing_session_id = Arc::clone(&deduped[index].session_id);
+            for session_id in [entry.session_id.as_ref(), existing_session_id.as_ref()] {
+                for route_hash in [
+                    sidechain_replay_dedupe_hash(message_id, session_id),
+                    sidechain_entry_replay_dedupe_hash(message_id, session_id),
+                ] {
+                    push_deduped_session_alias(deduped_indexes, route_hash, index, session_id);
+                }
+            }
         }
         if should_replace_deduped_daily_entry(&entry, &deduped[index]) {
-            deduped[index] = entry;
-            push_deduped_index(deduped_indexes, hash, index);
-            if let Some(message_id) = deduped[index].message_id.as_deref() {
+            let previous = std::mem::replace(&mut deduped[index], entry);
+            // The survivor is already indexed under its previous keys. Only register the keys
+            // that changed, so repeated same-timestamp rewrites do not rescan large buckets.
+            if daily_entry_exact_hash(&previous) != Some(hash) {
+                push_deduped_index(deduped_indexes, hash, index);
+            }
+            let replay_route_changed = previous.session_id != deduped[index].session_id
+                || is_sidechain_daily_entry(&previous) != is_sidechain_daily_entry(&deduped[index])
+                || previous.message_id != deduped[index].message_id;
+            if replay_route_changed && let Some(message_id) = deduped[index].message_id.as_deref() {
+                let session_id = deduped[index].session_id.as_ref();
                 push_deduped_index(
                     deduped_indexes,
-                    sidechain_replay_dedupe_hash(message_id, deduped[index].session_id.as_ref()),
+                    sidechain_replay_dedupe_hash(message_id, session_id),
                     index,
                 );
+                if is_sidechain_daily_entry(&deduped[index]) {
+                    push_deduped_index(
+                        deduped_indexes,
+                        sidechain_entry_replay_dedupe_hash(message_id, session_id),
+                        index,
+                    );
+                }
             }
         }
         return;
@@ -491,15 +547,35 @@ fn push_deduped_daily_entry(
     let index = deduped.len();
     deduped.push(entry);
     if let Some((hash, None)) = dedupe_lookup {
-        push_deduped_index(deduped_indexes, hash, index);
+        // `index` is new, so none of these buckets can already hold it.
+        push_new_deduped_index(deduped_indexes, hash, index);
         if let Some(message_id) = deduped[index].message_id.as_deref() {
-            push_deduped_index(
+            let session_id = deduped[index].session_id.as_ref();
+            push_new_deduped_index(
                 deduped_indexes,
-                sidechain_replay_dedupe_hash(message_id, deduped[index].session_id.as_ref()),
+                sidechain_replay_dedupe_hash(message_id, session_id),
                 index,
             );
+            if is_sidechain_daily_entry(&deduped[index]) {
+                push_new_deduped_index(
+                    deduped_indexes,
+                    sidechain_entry_replay_dedupe_hash(message_id, session_id),
+                    index,
+                );
+            }
         }
     }
+}
+
+fn daily_entry_exact_hash(entry: &DailyLoadedEntry) -> Option<u64> {
+    entry.message_id.as_deref().map(|message_id| {
+        usage_dedupe_hash(
+            message_id,
+            entry.request_id.as_deref(),
+            entry.session_id.as_ref(),
+            entry.timestamp,
+        )
+    })
 }
 
 fn should_replace_deduped_daily_entry(

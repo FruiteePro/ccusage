@@ -41,6 +41,7 @@ impl RootAllOptions {
         AgentCommandArgs {
             shared,
             kind,
+            session_id: None,
             sections: self.sections,
             by_agent: self.by_agent,
             pi_path: None,
@@ -422,6 +423,7 @@ fn parse_all_command(
     Ok(Command::All(AgentCommandArgs {
         shared,
         kind,
+        session_id: None,
         sections,
         by_agent,
         pi_path: None,
@@ -465,6 +467,7 @@ fn parse_top_level_session_command(
     Ok(Command::All(AgentCommandArgs {
         shared: args.shared,
         kind: AgentReportKind::Session,
+        session_id: None,
         sections,
         by_agent,
         pi_path: None,
@@ -609,6 +612,7 @@ fn parse_codex_command(
 ) -> Result<Command, String> {
     let kind = parse_agent_report_kind(parser, "codex", STANDARD_AGENT_REPORTS)?;
     let mut codex_speed = CodexSpeed::Auto;
+    let mut session_id = None;
     config.apply_agent_args(&mut codex_speed, None, None);
     while parser.peek().is_some() {
         if parse_shared_arg_for_command(parser, &mut shared)? {
@@ -616,12 +620,16 @@ fn parse_codex_command(
         }
         match parser.next_flag()?.as_str() {
             "--speed" => codex_speed = parse_codex_speed(&parser.value_for("--speed")?)?,
+            "-i" | "--id" if kind == AgentReportKind::Session => {
+                session_id = Some(parser.value_for("--id")?)
+            }
             flag => return Err(format!("Unknown codex option '{flag}'")),
         }
     }
     Ok(Command::Codex(AgentCommandArgs {
         shared,
         kind,
+        session_id,
         sections: None,
         by_agent: false,
         pi_path: None,
@@ -651,6 +659,7 @@ fn parse_pi_command(
     Ok(Command::Pi(AgentCommandArgs {
         shared,
         kind,
+        session_id: None,
         sections: None,
         by_agent: false,
         pi_path,
@@ -680,6 +689,7 @@ fn parse_openclaw_command(
     Ok(Command::OpenClaw(AgentCommandArgs {
         shared,
         kind,
+        session_id: None,
         sections: None,
         by_agent: false,
         pi_path: None,
@@ -710,6 +720,7 @@ fn agent_command_args(shared: SharedArgs, kind: AgentReportKind) -> AgentCommand
     AgentCommandArgs {
         shared,
         kind,
+        session_id: None,
         sections: None,
         by_agent: false,
         pi_path: None,

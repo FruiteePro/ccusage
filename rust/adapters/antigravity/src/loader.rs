@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-use crate::{LoadedEntry, PricingMap, Result, cli::SharedArgs, parse_tz};
+use crate::{LoadedEntry, PricingMap, Result, cli::SharedArgs, debug_log, parse_tz};
 
 use super::{
     parser::{AntigravityUsageEvent, event_to_loaded, merge_usage_event, parse_sqlite_file},
@@ -21,7 +21,16 @@ fn load_entries_inner(shared: &SharedArgs, pricing: &PricingMap) -> Result<Vec<L
     let database_paths = conversation_db_paths()?;
     let mut parsed_events = Vec::new();
     for database_path in database_paths {
-        parsed_events.extend(parse_sqlite_file(&database_path)?);
+        match parse_sqlite_file(&database_path)? {
+            Some(events) => parsed_events.extend(events),
+            None => debug_log(
+                shared,
+                format!(
+                    "Skipping uninitialized Antigravity database '{}': empty SQLite snapshot",
+                    database_path.display()
+                ),
+            ),
+        }
     }
     let mut events = deduplicate_events(parsed_events);
     events.sort_by_key(|event| event.timestamp);
@@ -706,6 +715,72 @@ mod tests {
             .collect::<std::collections::BTreeMap<_, _>>();
 
         insta::assert_json_snapshot!(reports);
+    }
+
+    #[test]
+    fn skips_zero_byte_databases_and_reports_valid_entries() {
+        let fixture = Fixture::new();
+        let _ = fixture.write_file("conversations/empty.db", "");
+        create_database(
+            &fixture.path("conversations/session.db"),
+            &[(
+                1,
+                metadata_blob(
+                    Some("gemini-3-pro"),
+                    Some(UsageFixture {
+                        input_tokens: 10,
+                        total_output_tokens: 5,
+                        visible_output_tokens: 5,
+                        response_id: Some("valid-response"),
+                        ..UsageFixture::default()
+                    }),
+                    Some((1_778_000_000, 0)),
+                    &[],
+                ),
+            )],
+            &[],
+            &[],
+        );
+
+        let entries = load_from_fixture(&fixture, true);
+
+        assert_eq!(entries.len(), 1);
+        assert_eq!(
+            entries[0].data.message.id.as_deref(),
+            Some("valid-response")
+        );
+    }
+
+    #[test]
+    fn returns_empty_report_when_only_zero_byte_databases_exist() {
+        let fixture = Fixture::new();
+        let database = fixture.write_file("conversations/empty.db", "");
+
+        assert!(parse_sqlite_file(&database).unwrap().is_none());
+
+        let entries = load_from_fixture(&fixture, true);
+
+        assert!(entries.is_empty());
+    }
+
+    #[test]
+    fn still_propagates_errors_for_nonempty_databases_alongside_empty_ones() {
+        let fixture = Fixture::new();
+        let _ = fixture.write_file("conversations/empty.db", "");
+        create_database(
+            &fixture.path("conversations/malformed.db"),
+            &[(1, vec![0x0a, 0x01, 0x80])],
+            &[],
+            &[],
+        );
+        let _guard = EnvVarsGuard::set_many([(
+            super::super::paths::ANTIGRAVITY_DATA_DIR_ENV,
+            Some(OsString::from(fixture.root())),
+        )]);
+
+        let error = load_entries(&shared(true), &PricingMap::load_embedded()).unwrap_err();
+
+        assert!(error.to_string().contains("parse Antigravity metadata"));
     }
 
     #[test]
