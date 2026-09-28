@@ -17,12 +17,13 @@ jobs:
     if: github.repository == 'FruiteePro/ccusage'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      contents: write
     steps:
       - name: Merge upstream main into fork main
         env:
-          GH_TOKEN: ${{ github.token }}
+          # GITHUB_TOKEN can never be granted the `workflows` permission, so
+          # merge-upstream fails whenever upstream touches .github/workflows/.
+          # This fine-grained PAT has Contents + Workflows write on this repo.
+          GH_TOKEN: ${{ secrets.SYNC_UPSTREAM_TOKEN }}
           GH_REPO: ${{ github.repository }}
         run: >-
           gh api --method POST "repos/${GH_REPO}/merge-upstream"
