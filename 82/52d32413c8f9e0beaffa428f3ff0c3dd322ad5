@@ -1,0 +1,19 @@
+.github/workflows/sync-upstream.yaml
+  s_9e7cab5515d074::t_c489c729fc4177 23-26
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.45-trip",
+  "base_commit_sha": "8252d32413c8f9e0beaffa428f3ff0c3dd322ad5",
+  "prompts": {},
+  "sessions": {
+    "s_9e7cab5515d074": {
+      "agent_id": {
+        "tool": "chengxiaobang",
+        "id": "s_arl2jwjmusjn",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "junpengke <kejp@trip.com>"
+    }
+  }
+}
