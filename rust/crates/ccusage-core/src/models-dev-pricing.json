@@ -26456,9 +26456,9 @@
 	},
 	"qwen/qwen3.8-27b-antislop": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26476,9 +26476,9 @@
 	},
 	"qwen/qwen3.8-27b-darkidol": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26496,9 +26496,9 @@
 	},
 	"qwen/qwen3.8-27b-fimi": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26516,9 +26516,9 @@
 	},
 	"qwen/qwen3.8-27b-kimiko": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26526,9 +26526,9 @@
 	},
 	"qwen/qwen3.8-27b-kiwen": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26536,9 +26536,9 @@
 	},
 	"qwen/qwen3.8-27b-novelist": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26576,9 +26576,9 @@
 	},
 	"qwen/qwen3.8-27b-swift": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
@@ -26586,9 +26586,9 @@
 	},
 	"qwen/qwen3.8-27b-synthia": {
 		"cost": {
-			"cache_read": 0.125,
-			"input": 0.25,
-			"output": 1.5
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.6
 		},
 		"limit": {
 			"context": 262144
