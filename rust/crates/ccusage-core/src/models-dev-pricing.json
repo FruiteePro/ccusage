@@ -9111,7 +9111,7 @@
 	},
 	"deepinfra/gemma-4-31b-it": {
 		"cost": {
-			"input": 0.15,
+			"input": 0.2,
 			"output": 0.4
 		},
 		"limit": {
@@ -9755,9 +9755,9 @@
 	},
 	"deepseek-r1-0528": {
 		"cost": {
-			"cache_read": 0.163,
-			"input": 0.652,
-			"output": 2.57
+			"cache_read": 0.185472,
+			"input": 0.69552,
+			"output": 2.78208
 		},
 		"exactOnly": true,
 		"limit": {
@@ -10110,6 +10110,18 @@
 			"context": 1000000
 		}
 	},
+	"deepseek-v4.1-flash-fast": {
+		"cost": {
+			"cache_read": 0,
+			"cache_write": 0.09,
+			"input": 0.3,
+			"output": 1.2
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"deepseek-v4.1-flash-fast-fp4": {
 		"cost": {
 			"cache_read": 0,
@@ -10186,11 +10198,12 @@
 	},
 	"deepseek/deepseek-chat-v3-0324": {
 		"cost": {
-			"input": 0.25,
-			"output": 1
+			"cache_read": 0.11,
+			"input": 0.29,
+			"output": 1.14
 		},
 		"limit": {
-			"context": 163840
+			"context": 128000
 		}
 	},
 	"deepseek/deepseek-chat-v3.1": {
@@ -13413,6 +13426,18 @@
 			"context": 1000000
 		}
 	},
+	"glm-5.3-fast": {
+		"cost": {
+			"cache_read": 0,
+			"cache_write": 1.68,
+			"input": 1.12,
+			"output": 4.4
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"glm-5.3-flash": {
 		"cost": {
 			"cache_read": 0.03,
@@ -16110,16 +16135,6 @@
 			"context": 131072
 		}
 	},
-	"greenference/gpt-oss-20b": {
-		"cost": {
-			"cache_read": 0.0045,
-			"input": 0.009,
-			"output": 0.045
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
 	"greg-1-mini": {
 		"cost": {
 			"cache_read": 0.01,
@@ -17168,6 +17183,16 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"inclusionai/ling-3.0-flash-sante": {
+		"cost": {
+			"cache_read": 0.015,
+			"input": 0.075,
+			"output": 0.22
+		},
+		"limit": {
+			"context": 256000
 		}
 	},
 	"inclusionai/ling-3.0-flash-vl": {
@@ -18262,6 +18287,16 @@
 		"exactOnly": true,
 		"limit": {
 			"context": 250000
+		}
+	},
+	"luminal/deepseek-ai/DeepSeek-V4.1-Flash": {
+		"cost": {
+			"cache_read": 0.0027,
+			"input": 0.135,
+			"output": 0.54
+		},
+		"limit": {
+			"context": 1000000
 		}
 	},
 	"magibu-11b-v8": {
@@ -24034,16 +24069,16 @@
 	},
 	"openai/gpt-5.6-sol-pro": {
 		"cost": {
-			"cache_read": 0.4,
-			"cache_write": 5,
-			"input": 4,
-			"output": 20,
+			"cache_read": 0.2,
+			"cache_write": 2.5,
+			"input": 2,
+			"output": 10,
 			"tiers": [
 				{
-					"cache_read": 0.8,
-					"cache_write": 10,
-					"input": 8,
-					"output": 30,
+					"cache_read": 0.4,
+					"cache_write": 5,
+					"input": 4,
+					"output": 15,
 					"tier": {
 						"size": 272000,
 						"type": "context"
@@ -26740,8 +26775,8 @@
 	"qwen3-235b-a22b-instruct-2507": {
 		"cost": {
 			"cache_read": 0.018,
-			"input": 0.069,
-			"output": 0.455
+			"input": 0.199,
+			"output": 0.598
 		},
 		"exactOnly": true,
 		"limit": {
@@ -28834,24 +28869,24 @@
 			"context": 1000000
 		}
 	},
-	"subconscious/glm-5.2": {
+	"subconscious/deepseek-v4.1-flash-marathon": {
+		"cost": {
+			"cache_read": 0.0028,
+			"input": 0.14,
+			"output": 0.28
+		},
+		"limit": {
+			"context": 5000000
+		}
+	},
+	"subconscious/glm-5.3-marathon": {
 		"cost": {
 			"cache_read": 0.26,
 			"input": 1.4,
 			"output": 4.4
 		},
 		"limit": {
-			"context": 1000000
-		}
-	},
-	"subconscious/tim-qwen3.6-27b": {
-		"cost": {
-			"cache_read": 0.15,
-			"input": 0.3,
-			"output": 3
-		},
-		"limit": {
-			"context": 8192
+			"context": 5000000
 		}
 	},
 	"swiss-ai/Apertus-v1.5-70B": {
@@ -33287,8 +33322,8 @@
 	},
 	"~moonshotai/kimi-latest": {
 		"cost": {
-			"cache_read": 0.3,
-			"input": 0.576,
+			"cache_read": 0.45,
+			"input": 0.66,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33427,7 +33462,7 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0352,
+			"cache_read": 0.0232,
 			"input": 0.0352,
 			"output": 0.5
 		},
@@ -33438,9 +33473,9 @@
 	},
 	"~z-ai/glm-latest": {
 		"cost": {
-			"cache_read": 0.04,
-			"input": 0.05,
-			"output": 5
+			"cache_read": 0.03,
+			"input": 0.03,
+			"output": 12
 		},
 		"exactOnly": true,
 		"limit": {
