@@ -16135,6 +16135,26 @@
 			"context": 131072
 		}
 	},
+	"greenference/deepseek-v4.1-flash": {
+		"cost": {
+			"cache_read": 0.00075,
+			"input": 0.0015,
+			"output": 0.09
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
+	"greenference/gpt-oss-20b": {
+		"cost": {
+			"cache_read": 0.0045,
+			"input": 0.009,
+			"output": 0.045
+		},
+		"limit": {
+			"context": 131072
+		}
+	},
 	"greg-1-mini": {
 		"cost": {
 			"cache_read": 0.01,
@@ -17328,8 +17348,8 @@
 	},
 	"infomaniak/mistralai/Ministral-3-14B-Instruct-2512": {
 		"cost": {
-			"input": 0.33675,
-			"output": 0.449
+			"input": 0.33612,
+			"output": 0.44816
 		},
 		"limit": {
 			"context": 100000
@@ -17387,8 +17407,8 @@
 	},
 	"ionos/meta-llama/Llama-3.3-70B-Instruct": {
 		"cost": {
-			"input": 0.729625,
-			"output": 0.729625
+			"input": 0.72826,
+			"output": 0.72826
 		},
 		"limit": {
 			"context": 128000
@@ -17396,8 +17416,8 @@
 	},
 	"ionos/openai/gpt-oss-120b": {
 		"cost": {
-			"input": 0.168375,
-			"output": 0.729625
+			"input": 0.16806,
+			"output": 0.72826
 		},
 		"limit": {
 			"context": 131072
@@ -27866,9 +27886,9 @@
 	},
 	"scaleway/deepseek-v4-flash-0731": {
 		"cost": {
-			"cache_read": 0.0898,
-			"input": 0.449,
-			"output": 0.898
+			"cache_read": 0.089632,
+			"input": 0.44816,
+			"output": 0.89632
 		},
 		"limit": {
 			"context": 256000
@@ -27885,8 +27905,8 @@
 	},
 	"scaleway/gpt-oss-120b": {
 		"cost": {
-			"input": 0.168375,
-			"output": 0.6735
+			"input": 0.16806,
+			"output": 0.67224
 		},
 		"limit": {
 			"context": 128000
@@ -27894,8 +27914,8 @@
 	},
 	"scaleway/llama-3.3-70b-instruct": {
 		"cost": {
-			"input": 1.01025,
-			"output": 1.01025
+			"input": 1.00836,
+			"output": 1.00836
 		},
 		"limit": {
 			"context": 128000
