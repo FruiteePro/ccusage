@@ -19440,7 +19440,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 128000
+			"context": 131072
 		}
 	},
 	"ministral-8b-2512": {
@@ -19459,7 +19459,7 @@
 			"output": 0.1
 		},
 		"limit": {
-			"context": 128000
+			"context": 262144
 		}
 	},
 	"mistral-3-14B": {
@@ -19750,7 +19750,7 @@
 			"output": 0.6
 		},
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"mistral-small-2603@eu": {
@@ -19809,7 +19809,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"mistral.devstral-2-123b": {
@@ -20008,7 +20008,7 @@
 			"output": 0.04
 		},
 		"limit": {
-			"context": 128000
+			"context": 131072
 		}
 	},
 	"mistral/ministral-3b-2512": {
@@ -20026,7 +20026,7 @@
 			"output": 0.1
 		},
 		"limit": {
-			"context": 128000
+			"context": 262144
 		}
 	},
 	"mistral/ministral-8b-2512": {
@@ -20084,7 +20084,7 @@
 			"output": 2.09
 		},
 		"limit": {
-			"context": 1048576
+			"context": 524288
 		}
 	},
 	"mistral/mistral-large-latest": {
@@ -31151,7 +31151,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 32000
+			"context": 32768
 		}
 	},
 	"writer.palmyra-x4-v1:0": {
@@ -32748,7 +32748,7 @@
 			"output": 4.4
 		},
 		"limit": {
-			"context": 1000000
+			"context": 1048576
 		}
 	},
 	"zai-glm-5-3": {
@@ -32758,7 +32758,7 @@
 			"output": 4.4
 		},
 		"limit": {
-			"context": 1000000
+			"context": 1048576
 		}
 	},
 	"zai-glm-5.1": {
@@ -33406,7 +33406,7 @@
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
 			"cache_read": 0.015,
-			"input": 0.0395,
+			"input": 0.019474,
 			"output": 1.2
 		},
 		"exactOnly": true,
@@ -33417,7 +33417,7 @@
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
 			"cache_read": 0.24,
-			"input": 0.2444,
+			"input": 0.2399,
 			"output": 4.2
 		},
 		"exactOnly": true,
@@ -33427,8 +33427,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.009,
-			"input": 0.009,
+			"cache_read": 0.0053,
+			"input": 0.0053,
 			"output": 1.28
 		},
 		"limit": {
@@ -33612,8 +33612,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0214,
-			"input": 0.0214,
+			"cache_read": 0.0278,
+			"input": 0.0278,
 			"output": 0.5
 		},
 		"exactOnly": true,
