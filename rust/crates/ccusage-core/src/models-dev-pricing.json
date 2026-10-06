@@ -566,16 +566,6 @@
 			"context": 106000
 		}
 	},
-	"JetBrains/Mellum2-12B-A2.5B-Instruct": {
-		"cost": {
-			"cache_read": 0.05,
-			"input": 0.05,
-			"output": 0.1
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
 	"Kloker": {
 		"cost": {
 			"input": 0.23,
@@ -906,16 +896,6 @@
 		},
 		"limit": {
 			"context": 128000
-		}
-	},
-	"OpenPipe/Qwen3-14B-Instruct": {
-		"cost": {
-			"cache_read": 0.05,
-			"input": 0.05,
-			"output": 0.22
-		},
-		"limit": {
-			"context": 32768
 		}
 	},
 	"Pro/MiniMaxAI/MiniMax-M2.5": {
@@ -16998,16 +16978,6 @@
 			"context": 131000
 		}
 	},
-	"ibm-granite/granite-4.1-8b": {
-		"cost": {
-			"cache_read": 0.05,
-			"input": 0.05,
-			"output": 0.1
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
 	"ibm-granite/granite-4.2-8b": {
 		"cost": {
 			"cache_read": 0.015,
@@ -18538,16 +18508,6 @@
 			"context": 131072
 		}
 	},
-	"meta-llama/Llama-3.1-70B-Instruct": {
-		"cost": {
-			"cache_read": 0.8,
-			"input": 0.8,
-			"output": 0.8
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
 	"meta-llama/Llama-3.1-8B-Instruct": {
 		"cost": {
 			"cache_read": 0.2,
@@ -18697,6 +18657,15 @@
 		},
 		"limit": {
 			"context": 8192
+		}
+	},
+	"meta-llama/llama-3.1-70b-instruct": {
+		"cost": {
+			"input": 0.4,
+			"output": 0.4
+		},
+		"limit": {
+			"context": 131072
 		}
 	},
 	"meta-llama/llama-4-maverick": {
@@ -33443,7 +33412,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.7884,
+			"input": 0.7975,
 			"output": 13
 		},
 		"exactOnly": true,
