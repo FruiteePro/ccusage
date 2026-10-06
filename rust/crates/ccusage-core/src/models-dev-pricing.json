@@ -11151,6 +11151,16 @@
 			"context": 1000000
 		}
 	},
+	"entrim/deepseek-v4.1-flash": {
+		"cost": {
+			"cache_read": 0.005,
+			"input": 0.2,
+			"output": 0.6
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"ernie-4.5-21b-a3b-thinking": {
 		"cost": {
 			"input": 0.07,
@@ -20514,6 +20524,16 @@
 			"context": 262144
 		}
 	},
+	"mistralai/mistral-large-4": {
+		"cost": {
+			"cache_read": 0.07,
+			"input": 0.68,
+			"output": 2.09
+		},
+		"limit": {
+			"context": 524288
+		}
+	},
 	"mistralai/mistral-large-4-0": {
 		"cost": {
 			"cache_read": 0.14,
@@ -28029,6 +28049,16 @@
 			"context": 128000
 		}
 	},
+	"sciforium/deepseek-v4.1-flash": {
+		"cost": {
+			"cache_read": 0.006,
+			"input": 0.123,
+			"output": 0.472
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"scx-ai-gp/deepseek-v4.1-flash": {
 		"cost": {
 			"cache_read": 0.01,
@@ -33406,7 +33436,7 @@
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
 			"cache_read": 0.015,
-			"input": 0.045,
+			"input": 0.019474,
 			"output": 1.2
 		},
 		"exactOnly": true,
@@ -33416,8 +33446,8 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.24,
-			"input": 0.2399,
+			"cache_read": 0.25,
+			"input": 0.2514,
 			"output": 4.2
 		},
 		"exactOnly": true,
@@ -33427,8 +33457,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0134,
-			"input": 0.0134,
+			"cache_read": 0.0079,
+			"input": 0.0079,
 			"output": 1.28
 		},
 		"limit": {
@@ -33473,7 +33503,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.83,
+			"input": 0.68,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33612,8 +33642,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.036,
-			"input": 0.036,
+			"cache_read": 0.0214,
+			"input": 0.0214,
 			"output": 0.5
 		},
 		"exactOnly": true,
