@@ -10363,7 +10363,7 @@
 	"deepseek/deepseek-v3.1-terminus": {
 		"cost": {
 			"cache_read": 0.135,
-			"input": 0.3,
+			"input": 0.27,
 			"output": 1
 		},
 		"limit": {
@@ -33355,8 +33355,8 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.28,
-			"input": 0.2783,
+			"cache_read": 0.3,
+			"input": 0.3,
 			"output": 4.2
 		},
 		"exactOnly": true,
@@ -33412,7 +33412,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.7975,
+			"input": 1,
 			"output": 13
 		},
 		"exactOnly": true,
