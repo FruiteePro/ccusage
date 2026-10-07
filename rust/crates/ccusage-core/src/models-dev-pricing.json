@@ -33457,7 +33457,7 @@
 	},
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
-			"cache_read": 0.024,
+			"cache_read": 0.02,
 			"input": 0.05,
 			"output": 1.2
 		},
@@ -33664,8 +33664,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.036,
-			"input": 0.036,
+			"cache_read": 0.0214,
+			"input": 0.0214,
 			"output": 0.5
 		},
 		"exactOnly": true,
