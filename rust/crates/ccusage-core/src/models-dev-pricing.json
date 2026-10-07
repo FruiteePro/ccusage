@@ -711,7 +711,7 @@
 	},
 	"MiniMax-M2.5-highspeed": {
 		"cost": {
-			"cache_read": 0.06,
+			"cache_read": 0.03,
 			"cache_write": 0.375,
 			"input": 0.6,
 			"output": 2.4
@@ -4709,7 +4709,7 @@
 			"context": 1000000
 		}
 	},
-	"anthropic/claude-sonnet-5-5": {
+	"anthropic/claude-sonnet-5.5": {
 		"cost": {
 			"cache_read": 0.2,
 			"cache_write": 2.5,
@@ -8087,12 +8087,12 @@
 	},
 	"codestral-2508": {
 		"cost": {
-			"cache_read": 0.037,
-			"input": 0.368,
-			"output": 1.103
+			"cache_read": 0.03,
+			"input": 0.3,
+			"output": 0.9
 		},
 		"limit": {
-			"context": 256000
+			"context": 128000
 		}
 	},
 	"codestral-latest": {
@@ -10422,12 +10422,22 @@
 	},
 	"deepseek/deepseek-v4-flash-0423": {
 		"cost": {
-			"cache_read": 0.028,
-			"input": 0.19,
-			"output": 0.51
+			"cache_read": 0.02,
+			"input": 0.07,
+			"output": 0.25
 		},
 		"limit": {
-			"context": 1000000
+			"context": 1048576
+		}
+	},
+	"deepseek/deepseek-v4-flash-0423:thinking": {
+		"cost": {
+			"cache_read": 0.02,
+			"input": 0.07,
+			"output": 0.25
+		},
+		"limit": {
+			"context": 1048576
 		}
 	},
 	"deepseek/deepseek-v4-flash-0731": {
@@ -10702,16 +10712,6 @@
 			"context": 32000
 		}
 	},
-	"doubao-seed-1-6-250615": {
-		"cost": {
-			"cache_read": 0.102,
-			"input": 0.204,
-			"output": 0.51
-		},
-		"limit": {
-			"context": 256000
-		}
-	},
 	"doubao-seed-1-6-251015": {
 		"cost": {
 			"cache_read": 0.02375,
@@ -10728,16 +10728,6 @@
 					}
 				}
 			]
-		},
-		"limit": {
-			"context": 256000
-		}
-	},
-	"doubao-seed-1-6-flash-250615": {
-		"cost": {
-			"cache_read": 0.0187,
-			"input": 0.0374,
-			"output": 0.374
 		},
 		"limit": {
 			"context": 256000
@@ -11207,16 +11197,6 @@
 		},
 		"limit": {
 			"context": 119000
-		}
-	},
-	"ernie-x1.1-preview": {
-		"cost": {
-			"cache_read": 0.075,
-			"input": 0.15,
-			"output": 0.6
-		},
-		"limit": {
-			"context": 64000
 		}
 	},
 	"essentialai/Rnj-1-Instruct": {
@@ -13449,18 +13429,6 @@
 		"exactOnly": true,
 		"limit": {
 			"context": 1048560
-		}
-	},
-	"glm-5.3-flash-fp4": {
-		"cost": {
-			"cache_read": 0,
-			"cache_write": 0.23,
-			"input": 0.15,
-			"output": 0.5
-		},
-		"exactOnly": true,
-		"limit": {
-			"context": 1048576
 		}
 	},
 	"glm-5.3-flash:fast": {
@@ -17811,6 +17779,7 @@
 	"kimi-k3": {
 		"cost": {
 			"cache_read": 0.3,
+			"cache_write": 3,
 			"input": 3,
 			"output": 15
 		},
@@ -19415,13 +19384,13 @@
 	},
 	"ministral-14b-2512": {
 		"cost": {
-			"cache_read": 0.022,
-			"input": 0.24,
-			"output": 0.24
+			"cache_read": 0.02,
+			"input": 0.2,
+			"output": 0.2
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"ministral-3b": {
@@ -19435,13 +19404,13 @@
 	},
 	"ministral-3b-2512": {
 		"cost": {
-			"cache_read": 0.012,
-			"input": 0.123,
-			"output": 0.123
+			"cache_read": 0.01,
+			"input": 0.1,
+			"output": 0.1
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"ministral-3b-latest": {
@@ -19456,12 +19425,12 @@
 	},
 	"ministral-8b-2512": {
 		"cost": {
-			"cache_read": 0.017,
-			"input": 0.179,
-			"output": 0.179
+			"cache_read": 0.015,
+			"input": 0.15,
+			"output": 0.15
 		},
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"ministral-8b-latest": {
@@ -19591,6 +19560,17 @@
 			"context": 524288
 		}
 	},
+	"mistral-large-4-0": {
+		"cost": {
+			"cache_read": 0.079,
+			"input": 0.765,
+			"output": 2.351
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"mistral-large-4@eu": {
 		"cost": {
 			"cache_read": 0.07,
@@ -19599,7 +19579,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 1000000
+			"context": 524288
 		}
 	},
 	"mistral-large-latest": {
@@ -25519,8 +25499,8 @@
 	},
 	"qwen-vl-ocr": {
 		"cost": {
-			"input": 0.72,
-			"output": 0.72
+			"input": 0.07,
+			"output": 0.16
 		},
 		"exactOnly": true,
 		"limit": {
@@ -31188,12 +31168,11 @@
 	},
 	"voxtral-small-2507": {
 		"cost": {
-			"cache_read": 0.012,
-			"input": 0.123,
-			"output": 0.368
+			"input": 0.1,
+			"output": 0.4
 		},
 		"limit": {
-			"context": 32000
+			"context": 32768
 		}
 	},
 	"voxtral-small-latest": {
@@ -33664,8 +33643,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0278,
-			"input": 0.0278,
+			"cache_read": 0.0317,
+			"input": 0.0317,
 			"output": 0.5
 		},
 		"exactOnly": true,
