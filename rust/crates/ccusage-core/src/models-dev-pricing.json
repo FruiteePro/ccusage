@@ -17955,16 +17955,6 @@
 			"context": 256000
 		}
 	},
-	"kwaipilot/kat-coder-pro-v2.5": {
-		"cost": {
-			"cache_read": 0.15,
-			"input": 0.74,
-			"output": 2.96
-		},
-		"limit": {
-			"context": 262144
-		}
-	},
 	"laguna-s-2.1": {
 		"cost": {
 			"input": 0.09,
@@ -33664,8 +33654,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0244,
-			"input": 0.0244,
+			"cache_read": 0.0278,
+			"input": 0.0278,
 			"output": 0.5
 		},
 		"exactOnly": true,
@@ -33676,8 +33666,8 @@
 	"~z-ai/glm-latest": {
 		"cost": {
 			"cache_read": 0.03,
-			"input": 0.06,
-			"output": 4.4
+			"input": 0.03,
+			"output": 12
 		},
 		"exactOnly": true,
 		"limit": {
