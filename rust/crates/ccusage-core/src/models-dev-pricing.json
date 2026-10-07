@@ -8092,7 +8092,7 @@
 			"output": 0.9
 		},
 		"limit": {
-			"context": 128000
+			"context": 256000
 		}
 	},
 	"codestral-latest": {
@@ -17325,8 +17325,8 @@
 	},
 	"infomaniak/mistralai/Ministral-3-14B-Instruct-2512": {
 		"cost": {
-			"input": 0.33807,
-			"output": 0.45076
+			"input": 0.33531,
+			"output": 0.44708
 		},
 		"limit": {
 			"context": 100000
@@ -17384,8 +17384,8 @@
 	},
 	"ionos/meta-llama/Llama-3.3-70B-Instruct": {
 		"cost": {
-			"input": 0.732485,
-			"output": 0.732485
+			"input": 0.726505,
+			"output": 0.726505
 		},
 		"limit": {
 			"context": 128000
@@ -17393,8 +17393,8 @@
 	},
 	"ionos/openai/gpt-oss-120b": {
 		"cost": {
-			"input": 0.169035,
-			"output": 0.732485
+			"input": 0.167655,
+			"output": 0.726505
 		},
 		"limit": {
 			"context": 131072
@@ -18315,7 +18315,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 128000
+			"context": 262144
 		}
 	},
 	"mai-code-1-flash-picker": {
@@ -19410,7 +19410,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 262144
+			"context": 131072
 		}
 	},
 	"ministral-3b-latest": {
@@ -19897,6 +19897,7 @@
 	},
 	"mistral/codestral-2508": {
 		"cost": {
+			"cache_read": 0.03,
 			"input": 0.3,
 			"output": 0.9
 		},
@@ -27995,9 +27996,9 @@
 	},
 	"scaleway/deepseek-v4-flash-0731": {
 		"cost": {
-			"cache_read": 0.090152,
-			"input": 0.45076,
-			"output": 0.90152
+			"cache_read": 0.089416,
+			"input": 0.44708,
+			"output": 0.89416
 		},
 		"limit": {
 			"context": 256000
@@ -28014,8 +28015,8 @@
 	},
 	"scaleway/gpt-oss-120b": {
 		"cost": {
-			"input": 0.169035,
-			"output": 0.67614
+			"input": 0.167655,
+			"output": 0.67062
 		},
 		"limit": {
 			"context": 128000
@@ -28023,8 +28024,8 @@
 	},
 	"scaleway/llama-3.3-70b-instruct": {
 		"cost": {
-			"input": 1.01421,
-			"output": 1.01421
+			"input": 1.005931,
+			"output": 1.005931
 		},
 		"limit": {
 			"context": 128000
@@ -33447,9 +33448,9 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.033,
-			"input": 0.4,
-			"output": 4.3
+			"cache_read": 0.29,
+			"input": 0.2917,
+			"output": 4.2
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33643,8 +33644,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0317,
-			"input": 0.0317,
+			"cache_read": 0.0214,
+			"input": 0.0214,
 			"output": 0.5
 		},
 		"exactOnly": true,
