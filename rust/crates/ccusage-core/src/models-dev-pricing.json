@@ -11151,6 +11151,16 @@
 			"context": 1000000
 		}
 	},
+	"entrim/deepseek-v4.1-flash": {
+		"cost": {
+			"cache_read": 0.005,
+			"input": 0.2,
+			"output": 0.6
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"ernie-4.5-21b-a3b-thinking": {
 		"cost": {
 			"input": 0.07,
@@ -13970,6 +13980,17 @@
 			"context": 500000
 		}
 	},
+	"global.zai.glm-5.3": {
+		"cost": {
+			"cache_read": 0.312,
+			"cache_write": 2.1,
+			"input": 1.68,
+			"output": 5.28
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"gonka24/deepseek-v4-flash": {
 		"cost": {
 			"cache_read": 0.012,
@@ -14361,6 +14382,24 @@
 			"context": 131072
 		}
 	},
+	"google/deep-research-max-preview-04-2026": {
+		"cost": {
+			"input": 2,
+			"output": 12
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
+	"google/deep-research-preview-04-2026": {
+		"cost": {
+			"input": 2,
+			"output": 12
+		},
+		"limit": {
+			"context": 1048576
+		}
+	},
 	"google/diffusiongemma": {
 		"cost": {
 			"cache_read": 0.025,
@@ -14692,10 +14731,10 @@
 	},
 	"google/gemini-3.7-flash": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -14703,10 +14742,10 @@
 	},
 	"google/gemini-3.8-flash": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -14742,10 +14781,10 @@
 	},
 	"google/gemini-flash-latest": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"exactOnly": true,
 		"limit": {
@@ -16117,9 +16156,9 @@
 	},
 	"greenference/deepseek-v4.1-flash": {
 		"cost": {
-			"cache_read": 0.0069,
-			"input": 0.15,
-			"output": 0.882
+			"cache_read": 0.007,
+			"input": 0.22,
+			"output": 0.88
 		},
 		"limit": {
 			"context": 1048576
@@ -17318,8 +17357,8 @@
 	},
 	"infomaniak/mistralai/Ministral-3-14B-Instruct-2512": {
 		"cost": {
-			"input": 0.33612,
-			"output": 0.44816
+			"input": 0.33807,
+			"output": 0.45076
 		},
 		"limit": {
 			"context": 100000
@@ -17377,8 +17416,8 @@
 	},
 	"ionos/meta-llama/Llama-3.3-70B-Instruct": {
 		"cost": {
-			"input": 0.72826,
-			"output": 0.72826
+			"input": 0.732485,
+			"output": 0.732485
 		},
 		"limit": {
 			"context": 128000
@@ -17386,8 +17425,8 @@
 	},
 	"ionos/openai/gpt-oss-120b": {
 		"cost": {
-			"input": 0.16806,
-			"output": 0.72826
+			"input": 0.169035,
+			"output": 0.732485
 		},
 		"limit": {
 			"context": 131072
@@ -17914,16 +17953,6 @@
 		"exactOnly": true,
 		"limit": {
 			"context": 256000
-		}
-	},
-	"kwaipilot/kat-coder-pro-v2.5": {
-		"cost": {
-			"cache_read": 0.15,
-			"input": 0.74,
-			"output": 2.96
-		},
-		"limit": {
-			"context": 262144
 		}
 	},
 	"laguna-s-2.1": {
@@ -18670,12 +18699,12 @@
 	},
 	"meta-llama/llama-4-maverick": {
 		"cost": {
-			"cache_read": 0.075,
-			"input": 0.15,
-			"output": 0.6
+			"cache_read": 0.05,
+			"input": 0.1875,
+			"output": 0.6525
 		},
 		"limit": {
-			"context": 1048576
+			"context": 128000
 		}
 	},
 	"meta-llama/llama-4-scout": {
@@ -19422,7 +19451,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 128000
+			"context": 131072
 		}
 	},
 	"ministral-8b-2512": {
@@ -19441,7 +19470,7 @@
 			"output": 0.1
 		},
 		"limit": {
-			"context": 128000
+			"context": 262144
 		}
 	},
 	"mistral-3-14B": {
@@ -19550,6 +19579,27 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"mistral-large-4": {
+		"cost": {
+			"cache_read": 0.07,
+			"input": 0.68,
+			"output": 2.09
+		},
+		"limit": {
+			"context": 524288
+		}
+	},
+	"mistral-large-4@eu": {
+		"cost": {
+			"cache_read": 0.07,
+			"input": 0.68,
+			"output": 2.09
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 1000000
 		}
 	},
 	"mistral-large-latest": {
@@ -19711,7 +19761,7 @@
 			"output": 0.6
 		},
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"mistral-small-2603@eu": {
@@ -19770,7 +19820,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"mistral.devstral-2-123b": {
@@ -19969,7 +20019,7 @@
 			"output": 0.04
 		},
 		"limit": {
-			"context": 128000
+			"context": 131072
 		}
 	},
 	"mistral/ministral-3b-2512": {
@@ -19987,7 +20037,7 @@
 			"output": 0.1
 		},
 		"limit": {
-			"context": 128000
+			"context": 262144
 		}
 	},
 	"mistral/ministral-8b-2512": {
@@ -20036,6 +20086,16 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"mistral/mistral-large-4": {
+		"cost": {
+			"cache_read": 0.14,
+			"input": 1.36,
+			"output": 4.18
+		},
+		"limit": {
+			"context": 1000000
 		}
 	},
 	"mistral/mistral-large-latest": {
@@ -20463,6 +20523,26 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"mistralai/mistral-large-4": {
+		"cost": {
+			"cache_read": 0.07,
+			"input": 0.68,
+			"output": 2.09
+		},
+		"limit": {
+			"context": 524288
+		}
+	},
+	"mistralai/mistral-large-4-0": {
+		"cost": {
+			"cache_read": 0.14,
+			"input": 1.36,
+			"output": 4.18
+		},
+		"limit": {
+			"context": 524288
 		}
 	},
 	"mistralai/mistral-medium-3": {
@@ -27935,9 +28015,9 @@
 	},
 	"scaleway/deepseek-v4-flash-0731": {
 		"cost": {
-			"cache_read": 0.089632,
-			"input": 0.44816,
-			"output": 0.89632
+			"cache_read": 0.090152,
+			"input": 0.45076,
+			"output": 0.90152
 		},
 		"limit": {
 			"context": 256000
@@ -27954,8 +28034,8 @@
 	},
 	"scaleway/gpt-oss-120b": {
 		"cost": {
-			"input": 0.16806,
-			"output": 0.67224
+			"input": 0.169035,
+			"output": 0.67614
 		},
 		"limit": {
 			"context": 128000
@@ -27963,11 +28043,21 @@
 	},
 	"scaleway/llama-3.3-70b-instruct": {
 		"cost": {
-			"input": 1.00836,
-			"output": 1.00836
+			"input": 1.01421,
+			"output": 1.01421
 		},
 		"limit": {
 			"context": 128000
+		}
+	},
+	"sciforium/deepseek-v4.1-flash": {
+		"cost": {
+			"cache_read": 0.012,
+			"input": 0.246,
+			"output": 0.944
+		},
+		"limit": {
+			"context": 1048576
 		}
 	},
 	"scx-ai-gp/deepseek-v4.1-flash": {
@@ -28005,6 +28095,16 @@
 			"cache_read": 0.26,
 			"input": 1.4,
 			"output": 4.4
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
+	"scx-ai-gp/glm-5.3-fast": {
+		"cost": {
+			"cache_read": 0.56,
+			"input": 2.8,
+			"output": 8.8
 		},
 		"limit": {
 			"context": 1000000
@@ -28795,16 +28895,6 @@
 			"input": 0.25,
 			"output": 1.5
 		},
-		"limit": {
-			"context": 1000000
-		}
-	},
-	"stealth/space-bunny-alpha": {
-		"cost": {
-			"input": 0.05,
-			"output": 0.15
-		},
-		"exactOnly": true,
 		"limit": {
 			"context": 1000000
 		}
@@ -30369,6 +30459,17 @@
 			"context": 500000
 		}
 	},
+	"us.zai.glm-5.3": {
+		"cost": {
+			"cache_read": 0.3432,
+			"cache_write": 2.31,
+			"input": 1.848,
+			"output": 5.808
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"v0-1.0-md": {
 		"cost": {
 			"input": 3,
@@ -30793,10 +30894,10 @@
 	},
 	"vertex/gemini-3.7-flash": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30804,10 +30905,10 @@
 	},
 	"vertex/gemini-3.7-flash@eu": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30815,10 +30916,10 @@
 	},
 	"vertex/gemini-3.7-flash@us": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30826,10 +30927,10 @@
 	},
 	"vertex/gemini-3.8-flash": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30837,10 +30938,10 @@
 	},
 	"vertex/gemini-3.8-flash@eu": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30848,10 +30949,10 @@
 	},
 	"vertex/gemini-3.8-flash@us": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"limit": {
 			"context": 1048576
@@ -30859,10 +30960,10 @@
 	},
 	"vertex/gemini-flash-latest": {
 		"cost": {
-			"cache_read": 0.075,
-			"cache_write": 0.041667,
-			"input": 0.75,
-			"output": 3.75
+			"cache_read": 0.15,
+			"cache_write": 0.083333,
+			"input": 1.5,
+			"output": 7.5
 		},
 		"exactOnly": true,
 		"limit": {
@@ -31102,7 +31203,7 @@
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 32000
+			"context": 32768
 		}
 	},
 	"writer.palmyra-x4-v1:0": {
@@ -32699,7 +32800,7 @@
 			"output": 4.4
 		},
 		"limit": {
-			"context": 1000000
+			"context": 1048576
 		}
 	},
 	"zai-glm-5-3": {
@@ -32709,7 +32810,7 @@
 			"output": 4.4
 		},
 		"limit": {
-			"context": 1000000
+			"context": 1048576
 		}
 	},
 	"zai-glm-5.1": {
@@ -33356,8 +33457,8 @@
 	},
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
-			"cache_read": 0.003,
-			"input": 0.003,
+			"cache_read": 0.02,
+			"input": 0.05,
 			"output": 1.2
 		},
 		"exactOnly": true,
@@ -33367,9 +33468,9 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.28,
-			"input": 0.2765,
-			"output": 6
+			"cache_read": 0.15,
+			"input": 0.152,
+			"output": 4.2
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33378,8 +33479,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.006,
-			"input": 0.006,
+			"cache_read": 0.018,
+			"input": 0.018,
 			"output": 1.28
 		},
 		"limit": {
@@ -33424,7 +33525,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.664,
+			"input": 0.61,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33563,8 +33664,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0183,
-			"input": 0.0278,
+			"cache_read": 0.0214,
+			"input": 0.0214,
 			"output": 0.5
 		},
 		"exactOnly": true,
@@ -33574,9 +33675,9 @@
 	},
 	"~z-ai/glm-latest": {
 		"cost": {
-			"cache_read": 0.03,
-			"input": 0.03,
-			"output": 12
+			"cache_read": 0.0585,
+			"input": 0.063,
+			"output": 6.3
 		},
 		"exactOnly": true,
 		"limit": {
