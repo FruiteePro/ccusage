@@ -33515,7 +33515,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.68,
+			"input": 0.615,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33654,8 +33654,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0278,
-			"input": 0.0278,
+			"cache_read": 0.0317,
+			"input": 0.0317,
 			"output": 0.5
 		},
 		"exactOnly": true,
