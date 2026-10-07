@@ -4193,6 +4193,29 @@
 			"context": 200000
 		}
 	},
+	"anthropic/claude-haiku-5.5": {
+		"cost": {
+			"cache_read": 0.01,
+			"cache_write": 0.125,
+			"input": 0.1,
+			"output": 0.5,
+			"tiers": [
+				{
+					"cache_read": 0.05,
+					"cache_write": 0.625,
+					"input": 0.5,
+					"output": 2.5,
+					"tier": {
+						"size": 100001,
+						"type": "context"
+					}
+				}
+			]
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"anthropic/claude-haiku-latest": {
 		"cost": {
 			"cache_read": 0.1,
@@ -7020,6 +7043,29 @@
 		"exactOnly": true,
 		"limit": {
 			"context": 200000
+		}
+	},
+	"claude-haiku-5-5": {
+		"cost": {
+			"cache_read": 0.01,
+			"cache_write": 0.125,
+			"input": 0.1,
+			"output": 0.5,
+			"tiers": [
+				{
+					"cache_read": 0.05,
+					"cache_write": 0.625,
+					"input": 0.5,
+					"output": 2.5,
+					"tier": {
+						"size": 100000,
+						"type": "context"
+					}
+				}
+			]
+		},
+		"limit": {
+			"context": 1000000
 		}
 	},
 	"claude-mythos-5": {
@@ -19279,7 +19325,7 @@
 	},
 	"minimax/minimax-m2.5-highspeed": {
 		"cost": {
-			"cache_read": 0.06,
+			"cache_read": 0.03,
 			"cache_write": 0.375,
 			"input": 0.6,
 			"output": 2.4
@@ -25650,10 +25696,10 @@
 	},
 	"qwen/qwen-flash": {
 		"cost": {
-			"cache_read": 0.0043,
-			"cache_write": 0.027,
+			"cache_read": 0.0044,
+			"cache_write": 0.0275,
 			"input": 0.022,
-			"output": 0.22
+			"output": 0.216
 		},
 		"exactOnly": true,
 		"limit": {
@@ -26126,6 +26172,7 @@
 	"qwen/qwen3-vl-plus": {
 		"cost": {
 			"cache_read": 0.0286,
+			"cache_write": 0.17875,
 			"input": 0.143,
 			"output": 1.434
 		},
@@ -26196,10 +26243,10 @@
 	},
 	"qwen/qwen3.5-flash": {
 		"cost": {
-			"cache_read": 0.01,
-			"cache_write": 0.125,
-			"input": 0.1,
-			"output": 0.4
+			"cache_read": 0.0029,
+			"cache_write": 0.03625,
+			"input": 0.029,
+			"output": 0.287
 		},
 		"limit": {
 			"context": 1000000
@@ -26226,10 +26273,10 @@
 	},
 	"qwen/qwen3.5-plus": {
 		"cost": {
-			"cache_read": 0.04,
-			"cache_write": 0.4,
-			"input": 0.4,
-			"output": 2.4
+			"cache_read": 0.0115,
+			"cache_write": 0.14375,
+			"input": 0.115,
+			"output": 0.688
 		},
 		"limit": {
 			"context": 1000000
@@ -33401,14 +33448,14 @@
 	},
 	"~anthropic/claude-haiku-latest": {
 		"cost": {
-			"cache_read": 0.1,
-			"cache_write": 1.25,
-			"input": 1,
-			"output": 5
+			"cache_read": 0.01,
+			"cache_write": 0.125,
+			"input": 0.1,
+			"output": 0.5
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 200000
+			"context": 1000000
 		}
 	},
 	"~anthropic/claude-opus-latest": {
@@ -33438,18 +33485,18 @@
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
 			"cache_read": 0.03,
-			"input": 0.049,
+			"input": 0.045,
 			"output": 1.2
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 1040000
+			"context": 1048576
 		}
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
 			"cache_read": 0.29,
-			"input": 0.2917,
+			"input": 0.2885,
 			"output": 4.2
 		},
 		"exactOnly": true,
@@ -33644,8 +33691,8 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0278,
-			"input": 0.0278,
+			"cache_read": 0.025,
+			"input": 0.04,
 			"output": 0.5
 		},
 		"exactOnly": true,
