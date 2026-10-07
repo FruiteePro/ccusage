@@ -28100,6 +28100,16 @@
 			"context": 1000000
 		}
 	},
+	"scx-ai-gp/glm-5.3-fast": {
+		"cost": {
+			"cache_read": 0.56,
+			"input": 2.8,
+			"output": 8.8
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"scx-ai-gp/glm-5.3-flash": {
 		"cost": {
 			"cache_read": 0.025,
@@ -33447,19 +33457,19 @@
 	},
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
-			"cache_read": 0.021,
-			"input": 0.045,
-			"output": 0.3
+			"cache_read": 0.02,
+			"input": 0.05,
+			"output": 1.2
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 1040000
+			"context": 1048576
 		}
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
 			"cache_read": 0.3,
-			"input": 0.3,
+			"input": 0.2999,
 			"output": 4.2
 		},
 		"exactOnly": true,
@@ -33515,7 +33525,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.615,
+			"input": 0.61,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33654,9 +33664,9 @@
 	},
 	"~z-ai/glm-flash-latest": {
 		"cost": {
-			"cache_read": 0.0317,
-			"input": 0.0317,
-			"output": 0.5
+			"cache_read": 0.02354,
+			"input": 0.02354,
+			"output": 0.6875
 		},
 		"exactOnly": true,
 		"limit": {
