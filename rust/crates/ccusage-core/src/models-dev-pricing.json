@@ -12886,6 +12886,17 @@
 			"context": 262144
 		}
 	},
+	"gemma-4-26b-a4b-it-chimeraxheretic": {
+		"cost": {
+			"cache_read": 0.06,
+			"input": 0.12,
+			"output": 0.38
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 262144
+		}
+	},
 	"gemma-4-26b-a4b-it-darksoul": {
 		"cost": {
 			"cache_read": 0.06,
@@ -13039,6 +13050,17 @@
 		}
 	},
 	"gemma-4-31b-it-novelist": {
+		"cost": {
+			"cache_read": 0.05,
+			"input": 0.1,
+			"output": 0.45
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 262144
+		}
+	},
+	"gemma-4-31b-it-scarlet": {
 		"cost": {
 			"cache_read": 0.05,
 			"input": 0.1,
@@ -33684,7 +33706,7 @@
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
 			"cache_read": 0.01,
-			"input": 0.0351,
+			"input": 0.0356,
 			"output": 1
 		},
 		"exactOnly": true,
@@ -33705,9 +33727,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0144,
-			"input": 0.0144,
-			"output": 0.386526
+			"cache_read": 0.00632,
+			"input": 0.00632,
+			"output": 0.313086
 		},
 		"limit": {
 			"context": 1048576
@@ -33892,7 +33914,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 2.756983
+			"output": 3.33595
 		},
 		"exactOnly": true,
 		"limit": {
