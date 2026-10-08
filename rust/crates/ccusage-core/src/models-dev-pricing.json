@@ -33693,9 +33693,9 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.12,
-			"input": 0.1575,
-			"output": 4.2
+			"cache_read": 0.14,
+			"input": 0.15,
+			"output": 3.4
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33704,9 +33704,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.00368,
-			"input": 0.00368,
-			"output": 1.24416
+			"cache_read": 0.00832,
+			"input": 0.00832,
+			"output": 1.007769
 		},
 		"limit": {
 			"context": 1048576
@@ -33750,7 +33750,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.71,
+			"input": 0.67,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33891,7 +33891,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 0.7986
+			"output": 0.966306
 		},
 		"exactOnly": true,
 		"limit": {
