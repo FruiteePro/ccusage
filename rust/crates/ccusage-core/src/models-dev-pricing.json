@@ -17399,7 +17399,7 @@
 			"output": 0.22
 		},
 		"limit": {
-			"context": 256000
+			"context": 262144
 		}
 	},
 	"inclusionai/ling-3.0-flash-vl": {
@@ -33727,9 +33727,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.00368,
-			"input": 0.00368,
-			"output": 0.554651
+			"cache_read": 0.0104,
+			"input": 0.0104,
+			"output": 1.28
 		},
 		"limit": {
 			"context": 1048576
@@ -33914,7 +33914,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 4.835323
+			"output": 3.916611
 		},
 		"exactOnly": true,
 		"limit": {
