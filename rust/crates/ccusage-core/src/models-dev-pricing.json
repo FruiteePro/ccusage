@@ -19790,7 +19790,7 @@
 			"output": 2.09
 		},
 		"limit": {
-			"context": 524288
+			"context": 1048576
 		}
 	},
 	"mistral-large-4-0": {
@@ -20756,7 +20756,7 @@
 			"output": 4.18
 		},
 		"limit": {
-			"context": 524288
+			"context": 1048576
 		}
 	},
 	"mistralai/mistral-medium-3": {
@@ -33727,9 +33727,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.00632,
-			"input": 0.00632,
-			"output": 0.313086
+			"cache_read": 0.0137,
+			"input": 0.0137,
+			"output": 1.28
 		},
 		"limit": {
 			"context": 1048576
@@ -33914,7 +33914,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 3.33595
+			"output": 3.669545
 		},
 		"exactOnly": true,
 		"limit": {
