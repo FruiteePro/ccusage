@@ -3351,7 +3351,7 @@
 			"output": 0.04
 		},
 		"limit": {
-			"context": 128000
+			"context": 32768
 		}
 	},
 	"amazon/mistral.voxtral-mini-3b-2507@us": {
@@ -3360,7 +3360,7 @@
 			"output": 0.04
 		},
 		"limit": {
-			"context": 128000
+			"context": 32768
 		}
 	},
 	"amazon/mistral.voxtral-small-24b-2507": {
@@ -3369,7 +3369,7 @@
 			"output": 0.3
 		},
 		"limit": {
-			"context": 128000
+			"context": 32768
 		}
 	},
 	"amazon/mistral.voxtral-small-24b-2507@us": {
@@ -3378,7 +3378,7 @@
 			"output": 0.3
 		},
 		"limit": {
-			"context": 128000
+			"context": 32768
 		}
 	},
 	"amazon/moonshot.kimi-k2-thinking": {
@@ -33730,7 +33730,7 @@
 		"cost": {
 			"cache_read": 0.005,
 			"input": 0.0283,
-			"output": 0.8
+			"output": 1.2
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33750,8 +33750,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0046,
-			"input": 0.0046,
+			"cache_read": 0.0137,
+			"input": 0.0137,
 			"output": 1.28
 		},
 		"limit": {
@@ -33937,7 +33937,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 2.569689
+			"output": 3.109323
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33946,8 +33946,8 @@
 	},
 	"~z-ai/glm-latest": {
 		"cost": {
-			"cache_read": 0.0558,
-			"input": 0.06,
+			"cache_read": 0.0446,
+			"input": 0.048,
 			"output": 12
 		},
 		"exactOnly": true,
