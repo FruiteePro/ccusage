@@ -33680,8 +33680,8 @@
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
 			"cache_read": 0.2,
-			"input": 0.261,
-			"output": 4.2
+			"input": 0.25,
+			"output": 3.4
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33736,7 +33736,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.45,
-			"input": 0.47,
+			"input": 0.64,
 			"output": 13
 		},
 		"exactOnly": true,
