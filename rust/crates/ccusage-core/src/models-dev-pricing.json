@@ -6737,6 +6737,17 @@
 			"context": 300000
 		}
 	},
+	"callstack/apex": {
+		"cost": {
+			"cache_read": 0.2,
+			"input": 0.5,
+			"output": 3
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 262144
+		}
+	},
 	"canopywave/deepseek-v4-flash": {
 		"cost": {
 			"cache_read": 0.03,
@@ -17902,6 +17913,18 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"kimi-k2.5@eu": {
+		"cost": {
+			"cache_read": 0.72,
+			"cache_write": 0.72,
+			"input": 0.72,
+			"output": 3.6
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 128000
 		}
 	},
 	"kimi-k2.6": {
@@ -33705,9 +33728,9 @@
 	},
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
-			"cache_read": 0.008,
-			"input": 0.0168,
-			"output": 1.2
+			"cache_read": 0.005,
+			"input": 0.0283,
+			"output": 0.8
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33716,7 +33739,7 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.0953,
+			"cache_read": 0.13,
 			"input": 0.1271,
 			"output": 8
 		},
@@ -33727,8 +33750,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0104,
-			"input": 0.0104,
+			"cache_read": 0.0046,
+			"input": 0.0046,
 			"output": 1.28
 		},
 		"limit": {
@@ -33773,7 +33796,7 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.3,
-			"input": 0.83,
+			"input": 0.81,
 			"output": 13
 		},
 		"exactOnly": true,
@@ -33914,7 +33937,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 3.172455
+			"output": 2.569689
 		},
 		"exactOnly": true,
 		"limit": {
