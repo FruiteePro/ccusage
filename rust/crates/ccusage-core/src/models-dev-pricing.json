@@ -17535,8 +17535,8 @@
 	},
 	"infomaniak/mistralai/Ministral-3-14B-Instruct-2512": {
 		"cost": {
-			"input": 0.33531,
-			"output": 0.44708
+			"input": 0.33558,
+			"output": 0.44744
 		},
 		"limit": {
 			"context": 100000
@@ -17594,8 +17594,8 @@
 	},
 	"ionos/meta-llama/Llama-3.3-70B-Instruct": {
 		"cost": {
-			"input": 0.726505,
-			"output": 0.726505
+			"input": 0.72709,
+			"output": 0.72709
 		},
 		"limit": {
 			"context": 128000
@@ -17603,8 +17603,8 @@
 	},
 	"ionos/openai/gpt-oss-120b": {
 		"cost": {
-			"input": 0.167655,
-			"output": 0.726505
+			"input": 0.16779,
+			"output": 0.72709
 		},
 		"limit": {
 			"context": 131072
@@ -28230,9 +28230,9 @@
 	},
 	"scaleway/deepseek-v4-flash-0731": {
 		"cost": {
-			"cache_read": 0.089416,
-			"input": 0.44708,
-			"output": 0.89416
+			"cache_read": 0.089488,
+			"input": 0.44744,
+			"output": 0.89488
 		},
 		"limit": {
 			"context": 256000
@@ -28249,8 +28249,8 @@
 	},
 	"scaleway/gpt-oss-120b": {
 		"cost": {
-			"input": 0.167655,
-			"output": 0.67062
+			"input": 0.16779,
+			"output": 0.67116
 		},
 		"limit": {
 			"context": 128000
@@ -28258,8 +28258,8 @@
 	},
 	"scaleway/llama-3.3-70b-instruct": {
 		"cost": {
-			"input": 1.005931,
-			"output": 1.005931
+			"input": 1.00674,
+			"output": 1.00674
 		},
 		"limit": {
 			"context": 128000
@@ -33716,8 +33716,8 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.081,
-			"input": 0.108,
+			"cache_read": 0.11,
+			"input": 0.1413,
 			"output": 8
 		},
 		"exactOnly": true,
@@ -33727,8 +33727,8 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.006,
-			"input": 0.006,
+			"cache_read": 0.0137,
+			"input": 0.0137,
 			"output": 1.28
 		},
 		"limit": {
@@ -33914,7 +33914,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 4.440149
+			"output": 5.372581
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33923,8 +33923,8 @@
 	},
 	"~z-ai/glm-latest": {
 		"cost": {
-			"cache_read": 0.0439,
-			"input": 0.0472,
+			"cache_read": 0.0365,
+			"input": 0.0392,
 			"output": 12
 		},
 		"exactOnly": true,
