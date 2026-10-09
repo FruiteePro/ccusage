@@ -153,11 +153,11 @@
     "models-dev": {
       "flake": false,
       "locked": {
-        "lastModified": 1791552848,
-        "narHash": "sha256-PHrCcNuKK2JmzFoXmZ/QQDSVWOJqvKKHz29J+kunpeE=",
+        "lastModified": 1791556487,
+        "narHash": "sha256-PKpY0GAvQXdtP+PFtLaUnZzfbV2GpTnWpZ8jvB9EEZ8=",
         "owner": "anomalyco",
         "repo": "models.dev",
-        "rev": "62543b70a44e6fd7b2e5e2d5395db5b00145f005",
+        "rev": "3f6f5195357bf2ec992be05ef1b8f7573c16dd01",
         "type": "github"
       },
       "original": {
