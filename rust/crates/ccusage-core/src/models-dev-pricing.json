@@ -7878,7 +7878,7 @@
 	},
 	"claude-sonnet-5-5@default": {
 		"cost": {
-			"cache_read": 0.2,
+			"cache_read": 0.1,
 			"cache_write": 2.5,
 			"input": 2,
 			"output": 10
@@ -15123,6 +15123,16 @@
 			"context": 262144
 		}
 	},
+	"google/gemma-4-26b-a4b-it-maas": {
+		"cost": {
+			"cache_read": 0.015,
+			"input": 0.15,
+			"output": 0.6
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
 	"google/gemma-4-26b-a4b-it:thinking": {
 		"cost": {
 			"cache_read": 0.065,
@@ -19121,6 +19131,15 @@
 		},
 		"limit": {
 			"context": 524288
+		}
+	},
+	"meta/llama-4-scout-17b-16e-instruct-maas": {
+		"cost": {
+			"input": 0.25,
+			"output": 0.7
+		},
+		"limit": {
+			"context": 1310720
 		}
 	},
 	"meta/muse-glimmer-30b": {
@@ -30730,33 +30749,6 @@
 			"context": 1000000
 		}
 	},
-	"v0-1.0-md": {
-		"cost": {
-			"input": 3,
-			"output": 15
-		},
-		"limit": {
-			"context": 128000
-		}
-	},
-	"v0-1.5-lg": {
-		"cost": {
-			"input": 15,
-			"output": 75
-		},
-		"limit": {
-			"context": 512000
-		}
-	},
-	"v0-1.5-md": {
-		"cost": {
-			"input": 3,
-			"output": 15
-		},
-		"limit": {
-			"context": 128000
-		}
-	},
 	"venice-uncensored": {
 		"cost": {
 			"cache_read": 0.4,
@@ -32081,7 +32073,7 @@
 			]
 		},
 		"limit": {
-			"context": 500000
+			"context": 524288
 		}
 	},
 	"xai/grok-build-0.1": {
@@ -33729,7 +33721,7 @@
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
 			"cache_read": 0.005,
-			"input": 0.0283,
+			"input": 0.012,
 			"output": 1.2
 		},
 		"exactOnly": true,
@@ -33739,8 +33731,8 @@
 	},
 	"~deepseek/deepseek-pro-latest": {
 		"cost": {
-			"cache_read": 0.13,
-			"input": 0.1271,
+			"cache_read": 0.11,
+			"input": 0.108,
 			"output": 8
 		},
 		"exactOnly": true,
@@ -33750,9 +33742,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0137,
-			"input": 0.0137,
-			"output": 1.28
+			"cache_read": 0.01096,
+			"input": 0.01096,
+			"output": 0.532795
 		},
 		"limit": {
 			"context": 1048576
@@ -33937,7 +33929,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 3.109323
+			"output": 2.798391
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33946,9 +33938,9 @@
 	},
 	"~z-ai/glm-latest": {
 		"cost": {
-			"cache_read": 0.0446,
-			"input": 0.048,
-			"output": 12
+			"cache_read": 0.029,
+			"input": 0.0312,
+			"output": 4.4
 		},
 		"exactOnly": true,
 		"limit": {
