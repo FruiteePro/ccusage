@@ -20,7 +20,17 @@
 	},
 	"@cf/cloudflare/clef-flash": {
 		"cost": {
-			"input": 0.09,
+			"input": 0.038,
+			"output": 0
+		},
+		"exactOnly": true,
+		"limit": {
+			"context": 65536
+		}
+	},
+	"@cf/cloudflare/clef-omni": {
+		"cost": {
+			"input": 0.15,
 			"output": 0
 		},
 		"exactOnly": true,
@@ -1093,17 +1103,6 @@
 			"context": 262144
 		}
 	},
-	"Qwen/Qwen3-30B-A3B-Instruct-2507": {
-		"cost": {
-			"cache_read": 0.01,
-			"cache_write": 0.125,
-			"input": 0.1,
-			"output": 0.3
-		},
-		"limit": {
-			"context": 262144
-		}
-	},
 	"Qwen/Qwen3-32B": {
 		"cost": {
 			"cache_read": 0.9,
@@ -1222,6 +1221,27 @@
 			"context": 40960
 		}
 	},
+	"Qwen/Qwen3-Max": {
+		"cost": {
+			"cache_read": 0.24,
+			"input": 1.2,
+			"output": 6,
+			"tiers": [
+				{
+					"cache_read": 0.48,
+					"input": 2.4,
+					"output": 12,
+					"tier": {
+						"size": 32000,
+						"type": "context"
+					}
+				}
+			]
+		},
+		"limit": {
+			"context": 256000
+		}
+	},
 	"Qwen/Qwen3-Next-80B-A3B-Instruct": {
 		"cost": {
 			"cache_read": 0.05,
@@ -1268,6 +1288,15 @@
 		},
 		"limit": {
 			"context": 218000
+		}
+	},
+	"Qwen/Qwen3-VL-32B-Instruct": {
+		"cost": {
+			"input": 0.2,
+			"output": 0.6
+		},
+		"limit": {
+			"context": 262000
 		}
 	},
 	"Qwen/Qwen3-VL-32B-Thinking": {
@@ -1353,17 +1382,6 @@
 			"cache_read": 0.029999999999999992,
 			"input": 0.3,
 			"output": 2
-		},
-		"limit": {
-			"context": 262144
-		}
-	},
-	"Qwen/Qwen3.6-35B-A3B": {
-		"cost": {
-			"cache_read": 0.028,
-			"cache_write": 0.175,
-			"input": 0.14,
-			"output": 1
 		},
 		"limit": {
 			"context": 262144
@@ -3857,6 +3875,17 @@
 			"context": 1000000
 		}
 	},
+	"anthropic-claude-5.5-haiku": {
+		"cost": {
+			"cache_read": 0.01,
+			"cache_write": 0.125,
+			"input": 0.1,
+			"output": 0.5
+		},
+		"limit": {
+			"context": 1000000
+		}
+	},
 	"anthropic-claude-haiku-4.5": {
 		"cost": {
 			"cache_read": 0.1,
@@ -5088,6 +5117,86 @@
 		"exactOnly": true,
 		"limit": {
 			"context": 1000000
+		}
+	},
+	"auto/mistralai/codestral-2508": {
+		"cost": {
+			"cache_read": 0.0314,
+			"input": 0.3138,
+			"output": 0.9413
+		},
+		"limit": {
+			"context": 128000
+		}
+	},
+	"auto/mistralai/ministral-14b-2512": {
+		"cost": {
+			"cache_read": 0.0209,
+			"input": 0.2092,
+			"output": 0.2092
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
+	"auto/mistralai/ministral-3b-2512": {
+		"cost": {
+			"cache_read": 0.0105,
+			"input": 0.1046,
+			"output": 0.1046
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
+	"auto/mistralai/ministral-8b-2512": {
+		"cost": {
+			"cache_read": 0.0157,
+			"input": 0.1569,
+			"output": 0.1569
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
+	"auto/mistralai/mistral-large-2512": {
+		"cost": {
+			"cache_read": 0.0523,
+			"input": 0.5229,
+			"output": 1.5688
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
+	"auto/mistralai/mistral-large-4": {
+		"cost": {
+			"cache_read": 0.0732,
+			"input": 0.7112,
+			"output": 2.1859
+		},
+		"limit": {
+			"context": 524288
+		}
+	},
+	"auto/mistralai/mistral-medium-3.5": {
+		"cost": {
+			"cache_read": 0.1569,
+			"input": 1.5688,
+			"output": 7.8442
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
+	"auto/mistralai/mistral-small-2603": {
+		"cost": {
+			"cache_read": 0.0157,
+			"input": 0.1569,
+			"output": 0.6275
+		},
+		"limit": {
+			"context": 256000
 		}
 	},
 	"aws-bedrock/claude-fable-5": {
@@ -8225,6 +8334,15 @@
 			"context": 1048576
 		}
 	},
+	"cloudflare/@cf/meta/llama-3.2-1b-instruct": {
+		"cost": {
+			"input": 0.027,
+			"output": 0.201
+		},
+		"limit": {
+			"context": 60000
+		}
+	},
 	"cloudflare/@cf/meta/llama-guard-3-8b": {
 		"cost": {
 			"input": 0.484,
@@ -9185,6 +9303,15 @@
 			"context": 256000
 		}
 	},
+	"deepinfra/Gryphe/MythoMax-L2-13b": {
+		"cost": {
+			"input": 0.4,
+			"output": 0.4
+		},
+		"limit": {
+			"context": 4096
+		}
+	},
 	"deepinfra/deepseek-ai/DeepSeek-R1": {
 		"cost": {
 			"input": 0.7,
@@ -9406,6 +9533,15 @@
 			"context": 131072
 		}
 	},
+	"deepinfra/microsoft/WizardLM-2-8x22B": {
+		"cost": {
+			"input": 0.48,
+			"output": 0.48
+		},
+		"limit": {
+			"context": 65536
+		}
+	},
 	"deepinfra/mimo-v2.6-flash": {
 		"cost": {
 			"cache_read": 0.0028,
@@ -9424,6 +9560,15 @@
 		},
 		"limit": {
 			"context": 1048576
+		}
+	},
+	"deepinfra/moonshotai/Kimi-K2-Instruct": {
+		"cost": {
+			"input": 0.5,
+			"output": 2
+		},
+		"limit": {
+			"context": 131072
 		}
 	},
 	"deepinfra/moonshotai/Kimi-K2.5": {
@@ -25946,12 +26091,12 @@
 	},
 	"qwen/qwen-mt-plus": {
 		"cost": {
-			"input": 0.25,
-			"output": 0.75
+			"input": 2.46,
+			"output": 7.37
 		},
 		"exactOnly": true,
 		"limit": {
-			"context": 16384
+			"context": 4096
 		}
 	},
 	"qwen/qwen-plus": {
@@ -25974,25 +26119,6 @@
 			]
 		},
 		"exactOnly": true,
-		"limit": {
-			"context": 1000000
-		}
-	},
-	"qwen/qwen-plus-2025-07-28": {
-		"cost": {
-			"input": 0.26,
-			"output": 0.78,
-			"tiers": [
-				{
-					"input": 0.78,
-					"output": 2.34,
-					"tier": {
-						"size": 256000,
-						"type": "context"
-					}
-				}
-			]
-		},
 		"limit": {
 			"context": 1000000
 		}
@@ -26118,13 +26244,15 @@
 			"context": 40960
 		}
 	},
-	"qwen/qwen3-30b-a3b-thinking-2507": {
+	"qwen/qwen3-30b-a3b-instruct-2507": {
 		"cost": {
-			"input": 0.2,
-			"output": 2.4
+			"cache_read": 0.09,
+			"cache_write": 0,
+			"input": 0.09,
+			"output": 0.3
 		},
 		"limit": {
-			"context": 81920
+			"context": 131072
 		}
 	},
 	"qwen/qwen3-32b-fp8": {
@@ -26138,12 +26266,12 @@
 	},
 	"qwen/qwen3-coder": {
 		"cost": {
-			"cache_read": 0.065,
-			"input": 0.13,
-			"output": 0.5
+			"cache_read": 0.1,
+			"input": 0.3,
+			"output": 1
 		},
 		"limit": {
-			"context": 262000
+			"context": 262144
 		}
 	},
 	"qwen/qwen3-coder-30b-a3b-instruct": {
@@ -26181,8 +26309,8 @@
 	},
 	"qwen/qwen3-coder-next": {
 		"cost": {
-			"cache_read": 0.075,
-			"input": 0.15,
+			"cache_read": 0.07,
+			"input": 0.12,
 			"output": 0.8
 		},
 		"limit": {
@@ -26200,48 +26328,13 @@
 	},
 	"qwen/qwen3-coder-plus": {
 		"cost": {
-			"cache_read": 0.13,
-			"cache_write": 0.8125,
-			"input": 0.65,
-			"output": 3.25,
-			"tiers": [
-				{
-					"cache_read": 0.234,
-					"cache_write": 1.4625,
-					"input": 1.17,
-					"output": 5.85,
-					"tier": {
-						"size": 32000,
-						"type": "context"
-					}
-				}
-			]
+			"cache_read": 0.2,
+			"cache_write": 1.25,
+			"input": 1,
+			"output": 5
 		},
 		"limit": {
 			"context": 1000000
-		}
-	},
-	"qwen/qwen3-max": {
-		"cost": {
-			"cache_read": 0.156,
-			"cache_write": 0.975,
-			"input": 0.78,
-			"output": 3.9,
-			"tiers": [
-				{
-					"cache_read": 0.312,
-					"cache_write": 1.95,
-					"input": 1.56,
-					"output": 7.8,
-					"tier": {
-						"size": 32000,
-						"type": "context"
-					}
-				}
-			]
-		},
-		"limit": {
-			"context": 262144
 		}
 	},
 	"qwen/qwen3-max-2026-01-23": {
@@ -26252,25 +26345,6 @@
 		},
 		"limit": {
 			"context": 256000
-		}
-	},
-	"qwen/qwen3-max-thinking": {
-		"cost": {
-			"input": 0.78,
-			"output": 3.9,
-			"tiers": [
-				{
-					"input": 1.56,
-					"output": 7.8,
-					"tier": {
-						"size": 32000,
-						"type": "context"
-					}
-				}
-			]
-		},
-		"limit": {
-			"context": 262144
 		}
 	},
 	"qwen/qwen3-max@eu": {
@@ -26324,47 +26398,31 @@
 	},
 	"qwen/qwen3-vl-30b-a3b-instruct": {
 		"cost": {
-			"input": 0.13,
-			"output": 0.52
+			"cache_read": 0.0216,
+			"input": 0.108,
+			"output": 0.43
+		},
+		"limit": {
+			"context": 131072
+		}
+	},
+	"qwen/qwen3-vl-30b-a3b-thinking": {
+		"cost": {
+			"input": 0.29,
+			"output": 1
 		},
 		"limit": {
 			"context": 262144
 		}
 	},
-	"qwen/qwen3-vl-30b-a3b-thinking": {
-		"cost": {
-			"input": 0.2,
-			"output": 2.4
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
-	"qwen/qwen3-vl-32b-instruct": {
-		"cost": {
-			"input": 0.104,
-			"output": 0.416
-		},
-		"limit": {
-			"context": 131072
-		}
-	},
 	"qwen/qwen3-vl-8b-instruct": {
 		"cost": {
-			"input": 0.117,
-			"output": 0.455
+			"cache_read": 0.12,
+			"input": 0.25,
+			"output": 0.75
 		},
 		"limit": {
-			"context": 131072
-		}
-	},
-	"qwen/qwen3-vl-8b-thinking": {
-		"cost": {
-			"input": 0.18,
-			"output": 2.1
-		},
-		"limit": {
-			"context": 131072
+			"context": 262144
 		}
 	},
 	"qwen/qwen3-vl-plus": {
@@ -26551,6 +26609,17 @@
 			"context": 262144
 		}
 	},
+	"qwen/qwen3.6-35b-a3b": {
+		"cost": {
+			"cache_read": 0.15,
+			"cache_write": 0,
+			"input": 0.15,
+			"output": 1
+		},
+		"limit": {
+			"context": 262144
+		}
+	},
 	"qwen/qwen3.6-35b-a3b:thinking": {
 		"cost": {
 			"cache_read": 0.056,
@@ -26586,23 +26655,13 @@
 	},
 	"qwen/qwen3.6-max-preview": {
 		"cost": {
-			"cache_write": 1.28375,
-			"input": 1.027,
-			"output": 6.162,
-			"tiers": [
-				{
-					"cache_write": 1.975,
-					"input": 1.58,
-					"output": 9.48,
-					"tier": {
-						"size": 128000,
-						"type": "context"
-					}
-				}
-			]
+			"cache_read": 0.2,
+			"cache_write": 1.17,
+			"input": 2.15,
+			"output": 12.86
 		},
 		"limit": {
-			"context": 262144
+			"context": 256000
 		}
 	},
 	"qwen/qwen3.6-plus": {
@@ -33029,6 +33088,15 @@
 			"context": 1000000
 		}
 	},
+	"zai-org/AutoGLM-Phone-9B-Multilingual": {
+		"cost": {
+			"input": 0.035,
+			"output": 0.138
+		},
+		"limit": {
+			"context": 65536
+		}
+	},
 	"zai-org/GLM-4.5": {
 		"cost": {
 			"input": 0.6,
@@ -33222,15 +33290,6 @@
 		},
 		"limit": {
 			"context": 200000
-		}
-	},
-	"zai-org/autoglm-phone-9b-multilingual": {
-		"cost": {
-			"input": 0.035,
-			"output": 0.138
-		},
-		"limit": {
-			"context": 65536
 		}
 	},
 	"zai-org/glm-4.5-air": {
@@ -33614,9 +33673,9 @@
 	},
 	"~deepseek/deepseek-flash-latest": {
 		"cost": {
-			"cache_read": 0.01,
+			"cache_read": 0.005,
 			"input": 0.016,
-			"output": 1.2
+			"output": 0.6
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33636,9 +33695,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.0079,
-			"input": 0.0079,
-			"output": 1.28
+			"cache_read": 0.00512,
+			"input": 0.00512,
+			"output": 0.01467
 		},
 		"limit": {
 			"context": 1048576
@@ -33681,9 +33740,9 @@
 	},
 	"~moonshotai/kimi-latest": {
 		"cost": {
-			"cache_read": 0.3,
-			"input": 0.49,
-			"output": 13
+			"cache_read": 0.29,
+			"input": 0.45,
+			"output": 14
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33823,7 +33882,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 0.264718
+			"output": 0.140682
 		},
 		"exactOnly": true,
 		"limit": {
