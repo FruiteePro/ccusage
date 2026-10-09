@@ -8239,6 +8239,15 @@
 			"context": 131072
 		}
 	},
+	"codestral-2": {
+		"cost": {
+			"input": 0.3,
+			"output": 0.9
+		},
+		"limit": {
+			"context": 128000
+		}
+	},
 	"codestral-2501": {
 		"cost": {
 			"input": 0.3,
@@ -19917,6 +19926,15 @@
 		},
 		"limit": {
 			"context": 262144
+		}
+	},
+	"mistral-medium-3": {
+		"cost": {
+			"input": 0.4,
+			"output": 2
+		},
+		"limit": {
+			"context": 131072
 		}
 	},
 	"mistral-medium-3-5@eu": {
@@ -33762,9 +33780,9 @@
 	},
 	"~deepseek/deepseek-v4-flash-latest": {
 		"cost": {
-			"cache_read": 0.00632,
-			"input": 0.00632,
-			"output": 0.346071
+			"cache_read": 0.0096,
+			"input": 0.01096,
+			"output": 0.311464
 		},
 		"limit": {
 			"context": 1048576
@@ -33808,8 +33826,8 @@
 	"~moonshotai/kimi-latest": {
 		"cost": {
 			"cache_read": 0.3,
-			"input": 0.59,
-			"output": 13
+			"input": 0.58,
+			"output": 12
 		},
 		"exactOnly": true,
 		"limit": {
@@ -33949,7 +33967,7 @@
 		"cost": {
 			"cache_read": 0.02,
 			"input": 0.032,
-			"output": 1.487179
+			"output": 1.472308
 		},
 		"exactOnly": true,
 		"limit": {
