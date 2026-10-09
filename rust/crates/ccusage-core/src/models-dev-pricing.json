@@ -17565,8 +17565,8 @@
 	},
 	"infomaniak/mistralai/Ministral-3-14B-Instruct-2512": {
 		"cost": {
-			"input": 0.33558,
-			"output": 0.44744
+			"input": 0.33618,
+			"output": 0.44824
 		},
 		"limit": {
 			"context": 100000
@@ -17624,8 +17624,8 @@
 	},
 	"ionos/meta-llama/Llama-3.3-70B-Instruct": {
 		"cost": {
-			"input": 0.72709,
-			"output": 0.72709
+			"input": 0.72839,
+			"output": 0.72839
 		},
 		"limit": {
 			"context": 128000
@@ -17633,8 +17633,8 @@
 	},
 	"ionos/openai/gpt-oss-120b": {
 		"cost": {
-			"input": 0.16779,
-			"output": 0.72709
+			"input": 0.16809,
+			"output": 0.72839
 		},
 		"limit": {
 			"context": 131072
@@ -28301,9 +28301,9 @@
 	},
 	"scaleway/deepseek-v4-flash-0731": {
 		"cost": {
-			"cache_read": 0.089488,
-			"input": 0.44744,
-			"output": 0.89488
+			"cache_read": 0.089648,
+			"input": 0.44824,
+			"output": 0.89648
 		},
 		"limit": {
 			"context": 256000
@@ -28320,8 +28320,8 @@
 	},
 	"scaleway/gpt-oss-120b": {
 		"cost": {
-			"input": 0.16779,
-			"output": 0.67116
+			"input": 0.16809,
+			"output": 0.67236
 		},
 		"limit": {
 			"context": 128000
@@ -28329,8 +28329,8 @@
 	},
 	"scaleway/llama-3.3-70b-instruct": {
 		"cost": {
-			"input": 1.00674,
-			"output": 1.00674
+			"input": 1.00854,
+			"output": 1.00854
 		},
 		"limit": {
 			"context": 128000
