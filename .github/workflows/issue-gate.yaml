@@ -52,7 +52,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Nushell
-        uses: hustcer/setup-nu@9215c80adb545a85c419d5085b76eb6d082f49e7 # v3.27
+        uses: hustcer/setup-nu@95cd3bfe252450ef7d35dd9a7ddecf3484341134 # v3.28
         with:
           version: 0.114.1
 
@@ -86,7 +86,7 @@ jobs:
         id: judge
         if: steps.access.outcome == 'success' && (steps.access.outputs.skip != 'true' || inputs.force_implementation == true)
         continue-on-error: true
-        uses: pullfrog/pullfrog@99c5e781dd54463197d1109998386d37c84f6853 # v0.1.84
+        uses: pullfrog/pullfrog@ed800018463e1b84e8e3377f662173aed1da98b0 # v0.1.95
         with:
           prompt: ${{ steps.request.outputs.prompt }}
           timeout: 15m
@@ -160,7 +160,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Nushell
-        uses: hustcer/setup-nu@9215c80adb545a85c419d5085b76eb6d082f49e7 # v3.27
+        uses: hustcer/setup-nu@95cd3bfe252450ef7d35dd9a7ddecf3484341134 # v3.28
         with:
           version: 0.114.1
 
@@ -214,7 +214,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Nushell
-        uses: hustcer/setup-nu@9215c80adb545a85c419d5085b76eb6d082f49e7 # v3.27
+        uses: hustcer/setup-nu@95cd3bfe252450ef7d35dd9a7ddecf3484341134 # v3.28
         with:
           version: 0.114.1
 
@@ -239,7 +239,7 @@ jobs:
       - name: Ask Pullfrog to implement the issue
         id: pullfrog
         if: steps.implementation_guard.outputs.skip != 'true'
-        uses: pullfrog/pullfrog@99c5e781dd54463197d1109998386d37c84f6853 # v0.1.84
+        uses: pullfrog/pullfrog@ed800018463e1b84e8e3377f662173aed1da98b0 # v0.1.95
         with:
           prompt: ${{ needs.apply.outputs.prompt }}
           timeout: 1h
@@ -430,7 +430,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Nushell
-        uses: hustcer/setup-nu@9215c80adb545a85c419d5085b76eb6d082f49e7 # v3.27
+        uses: hustcer/setup-nu@95cd3bfe252450ef7d35dd9a7ddecf3484341134 # v3.28
         with:
           version: 0.114.1
 

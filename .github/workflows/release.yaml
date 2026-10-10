@@ -37,7 +37,7 @@ jobs:
           ref: main
           fetch-depth: 0
       - id: tagpr
-        uses: Songmu/tagpr@2afc990a4a5a9a340665cc1a484c2102f7de332f # v1.21.0
+        uses: Songmu/tagpr@967f2ab22be958948fb5bd439bfa3d404dd9dee8 # v1.21.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -117,7 +117,9 @@ jobs:
       - build-native-packages
     if: needs.tagpr.outputs.tag != ''
     runs-on: ubuntu-24.04-arm
-    timeout-minutes: 10
+    # The pinned pnpm is compiled from source, and a cache miss on this arm
+    # runner takes longer than ten minutes to build it.
+    timeout-minutes: 45
     permissions:
       contents: read
       id-token: write
